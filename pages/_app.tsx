@@ -1,6 +1,52 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import localFont from "next/font/local";
+import Footer from "@/components/Global/Footer";
+import Navbar from "@/components/Global/Navbar";
+import type { AppProps } from "next/app";
+import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <div className={cabinetGrotesk.className}>
+      <Navbar />
+      <main className="max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-6xl 2xl:max-w-[90%] mx-auto px-6">
+        <Component {...pageProps} />
+      </main>
+      <Footer />
+    </div>
+  );
 }
+
+const cabinetGrotesk = localFont({
+  src: [
+    {
+      path: "./fonts/CabinetGrotesk-Black.woff2",
+      style: "black",
+      weight: "900",
+    },
+    {
+      path: "./fonts/CabinetGrotesk-Bold.woff2",
+      style: "bold",
+      weight: "700",
+    },
+    {
+      path: "./fonts/CabinetGrotesk-Extrabold.woff2",
+      style: "extrabold",
+      weight: "800",
+    },
+    {
+      path: "./fonts/CabinetGrotesk-Light.woff2",
+      style: "light",
+      weight: "300",
+    },
+    {
+      path: "./fonts/CabinetGrotesk-Medium.woff2",
+      style: "medium",
+      weight: "500",
+    },
+    {
+      path: "./fonts/CabinetGrotesk-Regular.woff2",
+      style: "regular",
+      weight: "400",
+    },
+  ],
+});
