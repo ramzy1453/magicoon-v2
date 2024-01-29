@@ -13,7 +13,7 @@ export default function Updates() {
       <h4 className="text-[#8594B4] mt-6 mb-16 ">Last updated: Jan 3, 2023</h4>
       <CodeUpdate />
       <h4 className="mt-16 text-primary">
-        If you're still unclear about our terms, please contact us at{" "}
+        If you are still unclear about our terms, please contact us at{" "}
         <span className="font-bold">support@magicoon.com</span>
       </h4>
     </div>

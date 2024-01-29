@@ -62,7 +62,7 @@ export default function PricingItem({ pricingItem, isMobile }: Props) {
           if (detail.link) {
             const [before, after] = detail.title?.split(detail.link.split);
             return (
-              <div className="pl-0">
+              <div className="pl-0" key={detail.title}>
                 <div className="flex">
                   <Image
                     alt="icon"
@@ -95,7 +95,7 @@ export default function PricingItem({ pricingItem, isMobile }: Props) {
             );
           }
           return (
-            <div className="pl-0">
+            <div className="pl-0" key={detail.title}>
               <div className="flex">
                 <Image
                   alt="icon"

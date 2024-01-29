@@ -15,6 +15,7 @@ export default function TermsOfUse({}: Props) {
 
           {["Library", "Search", "Market", "Freebies"].map((page, i) => (
             <li
+              key={page}
               className="hover:bg-info hover:text-white rounded-full cursor-pointer py-2 px-6 my-2 mx-4"
               onClick={() => {
                 setSelected(i);
@@ -36,6 +37,7 @@ export default function TermsOfUse({}: Props) {
 
             {["Library", "Search", "Market", "Freebies"].map((page, i) => (
               <li
+                key={page}
                 className="hover:bg-info hover:text-white rounded-full cursor-pointer py-2 px-6 my-2 mx-4"
                 onClick={() => {
                   setSelected(i);
@@ -49,7 +51,7 @@ export default function TermsOfUse({}: Props) {
         <div className="mt-8">
           {selectedPage.content.map((item, index) => {
             return (
-              <div className="mb-20" key={index}>
+              <div className="mb-20" key={item.title}>
                 <h2 className="mb-6 text-[#25314C] font-bold text-lg">
                   {item.title}
                 </h2>

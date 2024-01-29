@@ -8,13 +8,13 @@ export default function CodeUpdate() {
         fontFamily: "'Source Code Pro', monospace",
       }}
     >
-      {updates.map((update) => (
-        <div className="">
+      {updates.map((update, i) => (
+        <div key={i}>
           <h1 className="font-black">
             v.{update.version} ({update.date})
           </h1>
           {update.ameliorations.map(({ content, type }) => (
-            <h4>
+            <h4 key={content}>
               - {type}: {content}
             </h4>
           ))}
