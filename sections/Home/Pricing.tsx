@@ -1,7 +1,4 @@
-import PricingItem, {
-  IPricingItem,
-  IPricingDetails,
-} from "@/components/Home/PricingItem";
+import PricingItem, { IPricingItem } from "@/components/Home/PricingItem";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import PricingMobile from "./PricingMobile";
 
@@ -9,7 +6,7 @@ export default function Pricing() {
   const { isSm, isMd } = useMediaQuery();
   if (!isMd) return <PricingMobile pricingItems={pricingItems} />;
   return (
-    <div id="pricing" className="flex space-y-4 flex-col justify-center mt-40">
+    <>
       <h1 className="text-4xl font-black mb-7 text-center">Pricing</h1>
       <div>
         <h2 className="text-sm text-center font-medium">
@@ -24,7 +21,7 @@ export default function Pricing() {
           <PricingItem key={pricingItem.title} pricingItem={pricingItem} />
         ))}
       </div>
-    </div>
+    </>
   );
 }
 

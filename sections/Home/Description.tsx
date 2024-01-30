@@ -3,7 +3,7 @@ import DescriptionItem from "../../components/Home/DescriptionItem";
 
 export default function Description() {
   return (
-    <div className="md:flex justify-center items-center mb-24">
+    <>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 bg-[#EAEEF5] rounded-xl p-6">
         <DescriptionItem
           title="Figma"
@@ -31,6 +31,6 @@ export default function Description() {
           icon="/white-figma.svg"
         />{" "}
       </div>
-    </div>
+    </>
   );
 }

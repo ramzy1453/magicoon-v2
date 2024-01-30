@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 export default function Features() {
   return (
-    <div id="features" className="rounded-lg mt-40">
+    <>
       <div
         className={classNames(
           "flex flex-col px-4 lg:px-12 py-8 space-x-0 space-y-8 bg-[#EAEEF5]",
@@ -100,7 +100,7 @@ export default function Features() {
           </div>
         ))}
       </div>
-    </div>
+    </>
   );
 }
 

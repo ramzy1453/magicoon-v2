@@ -15,7 +15,7 @@ type Props = {
 export default function PricingMobile({ pricingItems }: Props) {
   const [activeTab, setActiveTab] = useState(1);
   return (
-    <div id="pricing" className="mt-40 max-w-md mx-auto">
+    <>
       <div className="border overflow-hidden rounded-xl flex items-center justify-center mb-8">
         {pricingItems.map((e, i) => (
           <a
@@ -40,6 +40,6 @@ export default function PricingMobile({ pricingItems }: Props) {
           <PricingItem pricingItem={pricingItems[activeTab]} isMobile />
         </motion.div>
       </AnimatePresence>
-    </div>
+    </>
   );
 }

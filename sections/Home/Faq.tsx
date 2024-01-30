@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Faq() {
   return (
-    <div className="rounded-xl bg-[#EAEEF5] py-16 px-4 space-y-10 mt-40">
+    <div>
       <div className="space-y-3">
         <h1 className="text-primary text-3xl md:text-5xl font-bold text-center">
           Frequently Asked Questions

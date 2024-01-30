@@ -7,10 +7,7 @@ import useMediaQuery from "@/hooks/useMediaQuery";
 export default function Hero() {
   const { isSm, is2xl, isMd } = useMediaQuery();
   return (
-    <div
-      id="start"
-      className="py-24 flex flex-col justify-center items-center space-y-9"
-    >
+    <>
       <LinearGradient
         gradient={[
           "to right",
@@ -45,6 +42,6 @@ export default function Hero() {
           Click here!
         </a>
       </div>
-    </div>
+    </>
   );
 }

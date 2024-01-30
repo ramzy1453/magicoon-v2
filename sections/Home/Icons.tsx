@@ -5,7 +5,7 @@ import { FaAccessibleIcon } from "react-icons/fa";
 
 export default function Icons() {
   return (
-    <div className="flex flex-col items-center justify-center my-24 space-y-8">
+    <>
       <div className="divide-y-8" />
       <h1 className="text-3xl font-black text-center">
         1,350 ICONS X 4 STYLES
@@ -30,7 +30,7 @@ export default function Icons() {
           return <IconItem {...icon} />;
         })}
       </div>
-    </div>
+    </>
   );
 }
 

@@ -4,10 +4,7 @@ type Props = {};
 
 export default function About({}: Props) {
   return (
-    <div
-      id="about"
-      className="flex flex-col items-center justify-center space-y-12"
-    >
+    <>
       <h1 className="text-3xl text-primary font-black">ABOUT</h1>
       <p className="text-center md:w-2/3 text-lg font-medium">
         magicoon Library is perfect for design, development companies and
@@ -22,6 +19,6 @@ export default function About({}: Props) {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         ></iframe>
       </div>
-    </div>
+    </>
   );
 }

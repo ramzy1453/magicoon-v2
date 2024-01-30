@@ -5,7 +5,7 @@ import { LinearGradient } from "react-text-gradients";
 
 export default function Categories() {
   return (
-    <div id="categories" className="flex flex-col space-y-6 justify-center">
+    <>
       <div className="divider">CATEGORIES</div>
       <LinearGradient
         gradient={["to right", "rgba(57,108,232,1) ,rgba(199,110,196,1)"]}
@@ -24,7 +24,7 @@ export default function Categories() {
           <CategoryItem {...category} key={category.title} />
         ))}
       </div>
-    </div>
+    </>
   );
 }
 

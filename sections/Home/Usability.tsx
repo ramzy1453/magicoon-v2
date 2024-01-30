@@ -5,7 +5,7 @@ type Props = {};
 
 export default function Usability(props: Props) {
   return (
-    <div className="mt-40 flex flex-col items-center justify-center space-y-12">
+    <>
       <h1 className="text-primary text-[2.5rem] leading-10 font-black">
         Use it Now!
       </h1>
@@ -19,6 +19,6 @@ export default function Usability(props: Props) {
       <button className="hover:shadow-md transition-all">
         <Image alt="featured" src="featured.svg" width={250} height={200} />
       </button>
-    </div>
+    </>
   );
 }

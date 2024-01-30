@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 
 export default function Testimonial() {
   return (
-    <div className="rounded-xl bg-[#EAEEF5] py-16 px-4 space-y-8 mt-40">
+    <>
       <div className="divider text-primary text-xl">TESTIMONIALS</div>
       <h1 className="text-primary text-3xl md:text-5xl font-bold text-center">
         What do Say About us?
@@ -37,6 +37,6 @@ export default function Testimonial() {
             </SwiperSlide>
           ))}
       </Swiper>
-    </div>
+    </>
   );
 }

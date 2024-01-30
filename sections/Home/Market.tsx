@@ -9,7 +9,7 @@ import classNames from "classnames";
 export default function Market() {
   return (
     <>
-      <div className="mt-40 flex flex-col items-center justify-center space-y-12">
+      <div className="flex flex-col items-center justify-center space-y-12">
         <h1 className="text-5xl font-extrabold">
           magicoon{" "}
           <LinearGradient gradient={["to right", "#396CE8 0%, #C76EC4 100%"]}>
@@ -62,10 +62,10 @@ export default function Market() {
             START NOW!
           </button>
         </div>
-        <div className="w-fit h-fit">
+        <div className="w-fit h-fit flex-1">
           <MarketItem />
         </div>
-        <div className="w-fit h-fit">
+        <div className="w-fit h-fit flex-1">
           <MarketItem />
         </div>
       </div>
