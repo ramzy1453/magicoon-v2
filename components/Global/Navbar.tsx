@@ -32,7 +32,7 @@ export default function Navbar() {
       animate={hidden ? "hidden" : "visible"}
       transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
     >
-      <div className="text-medium h-24 flex items-center justify-between mx-auto max-w-[1176px]">
+      <div className="text-medium h-24 flex items-center justify-between mx-auto max-w-[1176px] px-8">
         <Link href="/">
           <Image
             src="/magicoonLogo.svg"
