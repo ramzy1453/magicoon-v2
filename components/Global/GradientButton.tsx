@@ -7,7 +7,7 @@ import classNames from "classnames";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import Image from "next/image";
 import GradientButtonMobile from "./GradientButtonMobile";
-import { useOnClickOutside } from "use-hooks";
+import { useOnClickOutside } from "usehooks-ts";
 type Props = {};
 
 export default function GradientButton({}: Props) {
@@ -16,9 +16,9 @@ export default function GradientButton({}: Props) {
   const [open, setOpen] = useState<boolean>();
 
   //close the dropdown when clicking outside the referenced element
-  const ref = useRef<Node>();
+  const ref = useRef() as RefObject<HTMLElement>;
 
-  useOnClickOutside(ref as MutableRefObject<Node>, () => {
+  useOnClickOutside(ref, () => {
     setOpen(false);
   });
 
