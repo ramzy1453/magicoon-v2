@@ -17,19 +17,17 @@ export default function MarketItem(props: Props) {
       />
       <div className="card-body">
         <div className="flex justify-between items-center">
-          <h3 className="text-md font-medium">
-            magicoon - 288 UI icons library
-          </h3>
+          <p className="text-md font-medium">magicoon - 288 UI icons library</p>
           {props.price ? (
-            <h3 className="font-bold text-lg">${props.price}</h3>
+            <p className="font-bold text-lg">${props.price}</p>
           ) : (
             <button className="btn btn-primary btn-xs">FREE</button>
           )}
         </div>
-        <h3 className="text-sm font-bold">
+        <p className="text-sm font-bold">
           <span className="text-[#8594B4]">By </span>
           magicoon Library
-        </h3>
+        </p>
       </div>
     </div>
   );

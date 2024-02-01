@@ -9,7 +9,7 @@ export type Icon = {
 export default function IconItem({ Icon, style, border }: Icon) {
   return (
     <div className="flex cursor-pointer flex-col justify-center items-center space-y-4 group hover:scale-90 transition-all">
-      <div className="bg-[#EAEEF5] group-hover:bg-[#DDE2EB] rounded-lg flex flex-col justify-center items-center space-y-4 px-8 py-4">
+      <div className="bg-[#EAEEF5] group-hover:bg-[#DDE2EB] rounded-2xl flex flex-col justify-center items-center space-y-4 px-8 py-4">
         <Icon size={32} color={"#25314C"} />
         <div className="text-primary-500 text-xs font-bold">Light</div>
       </div>

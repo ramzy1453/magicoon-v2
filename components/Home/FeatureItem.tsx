@@ -12,20 +12,16 @@ export default function FeatureItem(props: Props) {
   return (
     <div
       className={cn(
-        "col-span-1 row-span-6 p-6 rounded-2xl bg-white bg-opacity-100",
-        "flex flex-col lg:p-4 lg:flex-row items-center justify-center gap-5"
+        "rounded-2xl bg-white bg-opacity-100",
+        "flex p-6 flex-row items-center gap-6"
       )}
     >
       <div className="flex btn btn-circle place-content-center rounded-full bg-[#EAEEF5]">
         <Image alt="figma-icon" src={props.icon} width={18} height={18} />
       </div>
-      <div className="flex flex-col items-center">
-        <h1 className={cn("text-lg text-primary font-bold mb-1")}>
-          {props.title}
-        </h1>
-        <h3 className="text-sm text-secondary font-semibold">
-          {props.subtitle}
-        </h3>
+      <div className="flex flex-col">
+        <p className={cn("text-lg text-primary font-bold")}>{props.title}</p>
+        <p className="text-secondary font-bold">{props.subtitle}</p>
       </div>
     </div>
   );

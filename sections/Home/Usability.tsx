@@ -6,9 +6,9 @@ type Props = {};
 export default function Usability(props: Props) {
   return (
     <>
-      <h1 className="text-primary text-[2.5rem] leading-10 font-black">
+      <p className="text-primary text-[2.5rem] leading-10 font-black">
         Use it Now!
-      </h1>
+      </p>
       <Image
         alt="magicoon_high_quality_vector_UI_icons_library"
         src="/magicoon_high_quality_vector_UI_icons_library.png"

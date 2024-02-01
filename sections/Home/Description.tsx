@@ -4,10 +4,10 @@ import DescriptionItem from "../../components/Home/DescriptionItem";
 export default function Description() {
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 bg-[#EAEEF5] rounded-xl p-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 bg-[#EAEEF5] rounded-xl p-12">
         <DescriptionItem
           title="Figma"
-          subtitle="Get a free set"
+          subtitle="Beta Version"
           icon="\figma_icon.svg"
           color="bg-[#EAEEF5]"
           firstElement
@@ -26,7 +26,7 @@ export default function Description() {
         />
         <DescriptionItem
           title="7,200+"
-          subtitle="Duplicate"
+          subtitle="Duplicate on Figma"
           color="bg-[#757AD5]"
           icon="/white-figma.svg"
         />{" "}

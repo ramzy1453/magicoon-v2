@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <div className={cabinetGrotesk.className}>
       <Navbar />
-      <main className="max-w-[1176px] mx-auto px-8">
+      <main className="max-w-[1240px] mx-auto px-8">
         <Component {...pageProps} />
       </main>
       <Footer />

@@ -7,14 +7,14 @@ export default function Pricing() {
   if (!isMd) return <PricingMobile pricingItems={pricingItems} />;
   return (
     <>
-      <h1 className="text-4xl font-black mb-7 text-center">Pricing</h1>
+      <p className="text-4xl font-black mb-7 text-center">Pricing</p>
       <div>
-        <h2 className="text-sm text-center font-medium">
+        <p className="text-sm text-center font-medium">
           Choose the best plan for you!
-        </h2>
-        <h2 className="text-sm font-medium text-center">
+        </p>
+        <p className="text-sm font-medium text-center">
           It doesn't end here, you are getting a lifetime of free updates
-        </h2>
+        </p>
       </div>
       <div className="grid grid-cols-3 py-6 gap-4 lg:gap-6">
         {pricingItems.map((pricingItem) => (
@@ -76,6 +76,7 @@ const pricingItems: IPricingItem[] = [
     title: "TEAM",
     description: "For medium teams, up to 6 users.",
     price: 119,
+    isPopular: true,
     content: [
       {
         title: "5,400+ Total icons",

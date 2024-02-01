@@ -27,10 +27,8 @@ export default function TermsOfUse({}: Props) {
         </ul>
       )}
       <div className="flex-[4] xl:flex-[3]">
-        <h1 className="text-[#25314C] font-black text-2xl mb-4">
-          TERMS OF USE
-        </h1>
-        <h6 className="">Last updated: Nov 3, 2023</h6>
+        <p className="text-[#25314C] font-black text-2xl mb-4">TERMS OF USE</p>
+        <p className="">Last updated: Nov 3, 2023</p>
         {!isSm && (
           <ul className="border flex-[1] rounded-xl h-fit mt-8">
             <li className="font-bold border-b py-2 px-6">Products</li>
@@ -52,9 +50,9 @@ export default function TermsOfUse({}: Props) {
           {selectedPage.content.map((item, index) => {
             return (
               <div className="mb-20" key={item.title}>
-                <h2 className="mb-6 text-[#25314C] font-bold text-lg">
+                <p className="mb-6 text-[#25314C] font-bold text-lg">
                   {item.title}
-                </h2>
+                </p>
                 <p>{item.description}</p>
               </div>
             );

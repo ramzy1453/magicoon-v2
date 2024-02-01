@@ -9,7 +9,7 @@ export default function Footer() {
     <div className="bg-[#EAEEF5] mt-40 py-16 px-16">
       <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         <div className=" flex-1 flex flex-col space-y-1">
-          <h1 className="font-black md:mb-4 lg:mb-8">COMPANY</h1>
+          <p className="font-black md:mb-4 lg:mb-8">COMPANY</p>
           <a
             href="#hero"
             className="hover:text-black hover:ml-2 transition-all"
@@ -31,7 +31,7 @@ export default function Footer() {
         </div>
 
         <div className=" flex-1 flex flex-col space-y-1">
-          <h1 className="font-black md:mb-4 lg:mb-8">HELP</h1>
+          <p className="font-black md:mb-4 lg:mb-8">HELP</p>
           <a
             href="#hero"
             className="hover:text-black hover:ml-2 transition-all"
@@ -52,7 +52,7 @@ export default function Footer() {
           </a>
         </div>
         <div className=" flex-1 flex flex-col space-y-1">
-          <h1 className="font-black md:mb-4 lg:mb-8">PRODUCTS</h1>
+          <p className="font-black md:mb-4 lg:mb-8">PRODUCTS</p>
           <a
             href="#hero"
             className="hover:text-black hover:ml-2 transition-all"
@@ -67,14 +67,14 @@ export default function Footer() {
           </a>
         </div>
         <div className="flex-1 flex flex-col space-y-4">
-          <h1 className="font-black md:mb-4 lg:mb-8">NEWSLETTER</h1>
-          <h3 className="">
+          <p className="font-black md:mb-4 lg:mb-8">NEWSLETTER</p>
+          <p className="">
             Stay close and subscribe to Newsletter to receive new updates.
-          </h3>
+          </p>
           <InputSearch fullWidth isPrimary isWhiteBg placeholder="Your Email" />
-          <h3 className="mb-8">
+          <p className="mb-8">
             <span className="font-bold">Email:</span> Support@magicoon.com
-          </h3>
+          </p>
           <div className="flex space-x-2">
             <button className="btn btn-circle btn-sm btn-primary">
               <FaFacebook size={18} color="white" />

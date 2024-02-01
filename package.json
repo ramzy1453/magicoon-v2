@@ -19,7 +19,8 @@
     "react-icons": "^4.11.0",
     "react-text-gradients": "^1.0.2",
     "swiper": "^11.0.5",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "use-hooks": "^2.0.0-rc.5"
   },
   "devDependencies": {
     "@types/node": "^20",

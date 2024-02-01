@@ -9,15 +9,15 @@ export default function Categories() {
       <div className="divider">CATEGORIES</div>
       <LinearGradient
         gradient={["to right", "rgba(57,108,232,1) ,rgba(199,110,196,1)"]}
-        className="text-4xl font-black text-center"
+        className="text-5xl font-black text-center"
       >
         Various Categories
       </LinearGradient>
       <div
         className={classNames(
-          "grid grid-cols-1 gap-8",
-          "sm:grid-cols-2",
-          "md:grid-cols-3"
+          "grid grid-cols-2 gap-4",
+          "md:grid-cols-3 md:gap-6",
+          "lg:grid-cols-4"
         )}
       >
         {categories.map((category) => (

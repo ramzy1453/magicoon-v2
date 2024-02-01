@@ -10,9 +10,9 @@ export default function Testimonial() {
   return (
     <>
       <div className="divider text-primary text-xl">TESTIMONIALS</div>
-      <h1 className="text-primary text-3xl md:text-5xl font-bold text-center">
+      <p className="text-primary text-3xl md:text-5xl font-bold text-center">
         What do Say About us?
-      </h1>
+      </p>
       <Swiper
         slidesPerView={1}
         breakpoints={{

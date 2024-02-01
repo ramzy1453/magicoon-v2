@@ -29,18 +29,18 @@ export default function PricingItem({ pricingItem, isMobile }: Props) {
       )}
       <div id="header" className="flex flex-col space-y-4 mb-6">
         <div>
-          <h1 className="text-primary text-md font-black">SOLO USER</h1>
-          <h2>For solo work as a designer or developer.</h2>
+          <p className="text-primary text-md font-black">{pricingItem.title}</p>
+          <p>For solo work as a designer or developer.</p>
         </div>
         <div className="flex items-center space-x-4">
-          <h1
+          <p
             className={classNames("font-black", {
               "text-3xl lg:text-5xl": !isMobile,
               "text-5xl": isMobile,
             })}
           >
             ${pricingItem.price}
-          </h1>
+          </p>
           <span className="font-bold text-lg">/One time</span>
         </div>
       </div>
@@ -72,7 +72,7 @@ export default function PricingItem({ pricingItem, isMobile }: Props) {
                     className="mr-3"
                   />
 
-                  <h4 className="font-bold">
+                  <p className="font-bold">
                     {before}
                     <a
                       href={detail.link.to}
@@ -81,14 +81,12 @@ export default function PricingItem({ pricingItem, isMobile }: Props) {
                       {detail.link.split}
                     </a>
                     {after}
-                  </h4>
+                  </p>
                 </div>
                 {detail.subtitle && (
                   <div className="flex">
                     <div className="w-4 h-4 mr-3" />
-                    <h6 className="text-sm text-[#25314C]">
-                      {detail.subtitle}
-                    </h6>
+                    <p className="text-sm text-[#25314C]">{detail.subtitle}</p>
                   </div>
                 )}
               </div>
@@ -104,12 +102,12 @@ export default function PricingItem({ pricingItem, isMobile }: Props) {
                   height={16}
                   className="mr-3"
                 />
-                <h4 className="font-bold">{detail.title}</h4>
+                <p className="font-bold">{detail.title}</p>
               </div>
               {detail.subtitle && (
                 <div className="flex">
                   <div className="w-4 h-4 mr-3" />
-                  <h6 className="text-sm text-[#25314C]">{detail.subtitle}</h6>
+                  <p className="text-sm text-[#25314C]">{detail.subtitle}</p>
                 </div>
               )}
             </div>

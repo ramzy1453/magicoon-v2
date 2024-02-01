@@ -1,22 +1,29 @@
 import FeatureItem from "@/components/Home/FeatureItem";
 import Image from "next/image";
 import classNames from "classnames";
+import dynamic from "next/dynamic";
+
+const AnimatedNumbers = dynamic(() => import("react-animated-numbers"), {
+  ssr: false,
+});
 
 export default function Features() {
   return (
     <>
       <div
         className={classNames(
-          "flex flex-col px-4 lg:px-12 py-8 space-x-0 space-y-8 bg-[#EAEEF5]",
-          "lg:flex-row lg:justify-between lg:space-x-14 lg:space-y-0 rounded-xl"
+          // "flex flex-col px-4 lg:px-12 py-8 space-x-0 space-y-8 bg-[#EAEEF5]",
+          // "lg:flex-row lg:justify-between lg:space-x-14 lg:space-y-0 rounded-xl"
+          "flex flex-col px-24 py-24 space-x-0 space-y-8 bg-[#EAEEF5]",
+          "lg:flex-row lg:justify-between lg:space-x-14 lg:space-y-0 rounded-xl text-primary"
         )}
       >
         <div className="flex flex-col justify-evenly flex-1">
           <div className="divider font-bold text-2xl">FEATURES</div>
           <div className="space-y-8">
-            <h1 className="text-2xl text-center font-black md:text-4xl md:leading-[60px]">
+            <p className="text-2xl font-extrabold md:text-[44px] md:leading-[60px]">
               Different Formats & Features at your Disposal
-            </h1>
+            </p>
             <div className="flex flex-col space-y-2">
               {features.map((feature) => (
                 <div
@@ -37,37 +44,51 @@ export default function Features() {
           </div>
         </div>
         <div className="flex-1 grid grid-cols-2 gap-4 lg:gap-8">
-          {Array(8)
-            .fill(0)
-            .map((i, k) => (
-              <FeatureItem
-                title="FIGMA"
-                subtitle="Format"
-                icon="figma_icon.svg"
-              />
-            ))}
+          {iconsFeatures.map(({ title, subtitle, icon }) => (
+            <FeatureItem
+              key={title}
+              title={title}
+              subtitle={subtitle}
+              icon={icon}
+            />
+          ))}
         </div>
       </div>
       <div
-        className="p-8 md:p-12 text-white rounded-br-lg rounded-bl-lg relative"
+        className="p-8 md:p-12 text-white rounded-br-xl rounded-bl-xl relative"
         style={{
           background:
             "linear-gradient(135deg, rgba(199,110,196,1) 11%, rgba(57,108,232,1) 100%)",
         }}
       >
-        <div className="grid grid-cols-2 xl:grid-cols-5 gap-8">
-          <div className="space-y-2 flex flex-col justify-center col-span-2 xl:col-span-1">
-            <h1 className="font-black text-3xl">Great Variety</h1>
-            <h2 className="text-md">
+        {/*  */}
+        {/* "flex justify-between space-x-10" */}
+        <div
+          className={classNames(
+            "gap-8",
+            "grid grid-cols-2",
+            "lg:flex lg:justify-between lg:space-x-10"
+          )}
+        >
+          <div className="space-y-2 flex flex-col justify-center flex-[30] col-span-2 lg:col-span-1">
+            <p className="font-black text-[28px]">Big Variety</p>
+            <p className="text-md">
               Huge set of icons, categories and formats all at your fingertips.
-            </h2>
+            </p>
           </div>
 
           {iconsDescriptions.map(([n, title, subtitle]) => (
-            <div className="flex flex-col space-y-2" key={title}>
-              <span className="font-black text-3xl">{n}</span>
-              <h2 className="text-md">{title}</h2>
-              <h2 className="text-md">{subtitle}</h2>
+            <div className="flex flex-col space-y-2 flex-[17.5]" key={title}>
+              <AnimatedNumbers
+                fontStyle={{
+                  fontWeight: 900,
+                  fontSize: "36px",
+                }}
+                animateToNumber={n as number}
+                includeComma
+              />
+              <p className="font-extrabold text-md">{title}</p>
+              <p className="font-medium text-md">{subtitle}</p>
             </div>
           ))}
         </div>
@@ -83,10 +104,10 @@ export default function Features() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 xl:grid-cols-4 xl:gap-10 my-16">
         <div className="flex flex-col space-y-3">
-          <h1 className="font-black text-2xl">Perfect for</h1>
-          <h3 className="text-sm font-regular">
+          <p className="font-black text-2xl">Perfect for</p>
+          <p className="text-sm font-regular">
             Can be used for all types of devices and interfaces.
-          </h3>
+          </p>
         </div>
         {perfectFor.map(([icon, title]) => (
           <div
@@ -96,7 +117,7 @@ export default function Features() {
             <div className="flex h-12 w-12 place-content-center bg-white rounded-full">
               <Image alt="figma-icon" src={icon} width={18} height={18} />
             </div>
-            <h1 className="text-lg font-semibold ml-5">{title}</h1>
+            <p className="text-lg font-semibold ml-5">{title}</p>
           </div>
         ))}
       </div>
@@ -114,13 +135,54 @@ const features = [
   "Perfect for Big or Small Projects.",
 ];
 
-const iconsFeatures = [];
+const iconsFeatures = [
+  {
+    title: "Figma",
+    subtitle: "Format",
+    icon: "figma_icon.svg",
+  },
+  {
+    title: "Adobe Xd",
+    subtitle: "Format",
+    icon: "figma_icon.svg",
+  },
+  {
+    title: "Ai",
+    subtitle: "Format",
+    icon: "figma_icon.svg",
+  },
+  {
+    title: "SVG",
+    subtitle: "Format",
+    icon: "figma_icon.svg",
+  },
+  {
+    title: "EPS",
+    subtitle: "Format",
+    icon: "figma_icon.svg",
+  },
+  {
+    title: "PDF",
+    subtitle: "Format",
+    icon: "figma_icon.svg",
+  },
+  {
+    title: "PNG",
+    subtitle: "Format",
+    icon: "figma_icon.svg",
+  },
+  {
+    title: "Soon..",
+    subtitle: "Format",
+    icon: "figma_icon.svg",
+  },
+];
 
 const iconsDescriptions = [
-  [5400, "ICONS", "1350+ Icons x 4 Styles"],
-  [29, "CATEGORIES", "For each style"],
-  [4, "STYLES", "For all icons"],
-  [7, "FORMATS", "For each style"],
+  [360, "ICONS", "90 Icons x 4 Styles"],
+  [25, "CATEGORIES", "For Each style"],
+  [4, "STYLES", "For All Icons"],
+  [7, "FORMATS", "For Each style"],
 ];
 
 const perfectFor = [

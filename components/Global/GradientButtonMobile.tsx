@@ -54,7 +54,7 @@ export default function GradientButtonMobile({ magicoonWebsites }: Props) {
             {magicoonWebsites.map((mgc) => (
               <div
                 key={mgc.id}
-                className="bg-white rounded-lg p-4 space-y-4 cursor-pointer hover:scale-[1.02] transition-all"
+                className="bg-white rounded-2xl p-4 space-y-4 cursor-pointer hover:scale-[1.02] transition-all"
               >
                 <Image alt="mgc" src={mgc.src} width={176} height={25} />
                 <p className="text-primary text-lg">{mgc.description}</p>

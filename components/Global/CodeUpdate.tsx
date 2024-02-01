@@ -10,13 +10,13 @@ export default function CodeUpdate() {
     >
       {updates.map((update, i) => (
         <div key={i}>
-          <h1 className="font-black">
+          <p className="font-black">
             v.{update.version} ({update.date})
-          </h1>
+          </p>
           {update.ameliorations.map(({ content, type }) => (
-            <h4 key={content}>
+            <p key={content}>
               - {type}: {content}
-            </h4>
+            </p>
           ))}
         </div>
       ))}

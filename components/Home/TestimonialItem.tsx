@@ -17,10 +17,10 @@ export default function TestimonialItem(props: Props) {
           />
         </div>
         <div>
-          <h1 className="font-black">Mais Tazagulov</h1>
-          <h6 className="text-[#93a0bb] font-medium">
+          <p className="font-black">Mais Tazagulov</p>
+          <p className="text-[#93a0bb] font-medium">
             Design Team Lead at Halolab
-          </h6>
+          </p>
         </div>
       </div>
       <p className="font-medium">

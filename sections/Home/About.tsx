@@ -5,7 +5,7 @@ type Props = {};
 export default function About({}: Props) {
   return (
     <>
-      <h1 className="text-3xl text-primary font-black">ABOUT</h1>
+      <p className="text-3xl text-primary font-black">ABOUT</p>
       <p className="text-center md:w-2/3 text-lg font-medium">
         magicoon Library is perfect for design, development companies and
         freelancers, one icons library allows you to work on many different

@@ -6,24 +6,21 @@ import { FaAccessibleIcon } from "react-icons/fa";
 export default function Icons() {
   return (
     <>
-      <div className="divide-y-8" />
-      <h1 className="text-3xl font-black text-center">
+      <p className="text-5xl text-[44px] font-black text-center text-primary mb-8">
         1,350 ICONS X 4 STYLES
-      </h1>
-      <div className="space-y-1">
-        <p className="text-center text-sm">
+      </p>
+      <div className="font font-medium text-center text-lg mb-10">
+        <p>
           The set contains 1,350 icons with 4 different styles for each, which
           makes them +5,400 icons in total.
         </p>
-        <p className="text-center text-sm">
-          Neat and clear shapes, at your fingertips!
-        </p>
+        <p>Neat and clear shapes, at your fingertips!</p>
       </div>
       <div
         className={classNames(
           "grid grid-cols-2 gap-x-24 gap-y-8",
           "sm:grid-cols-4 sm:gap-8",
-          "xl:gap-16"
+          "xl:gap-20"
         )}
       >
         {icons.map((icon) => {

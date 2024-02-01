@@ -24,20 +24,20 @@ export default function HomePage() {
       </div>
       <div
         id="about"
-        className="mt-28 flex flex-col items-center justify-center space-y-12"
+        className="mt-28 flex flex-col items-center justify-center space-y-8"
       >
         <About />
       </div>
-      <div className="mt-28 flex flex-col items-center justify-center space-y-8">
+      <div className="mt-28 flex flex-col items-center justify-center">
         <Icons />
       </div>
       <div
         id="categories"
-        className="mt-28 flex flex-col space-y-6 justify-center"
+        className="mt-28 flex flex-col space-y-8 justify-center"
       >
         <Categories />
       </div>
-      <div id="features" className="mt-28 rounded-lg">
+      <div id="features" className="mt-28 rounded-2xl">
         <Features />
       </div>
       <div className="mt-28 rounded-xl bg-[#EAEEF5] py-16 px-6 space-y-8">

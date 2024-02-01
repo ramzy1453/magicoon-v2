@@ -16,7 +16,13 @@ export default function CategoryItem({
 }: Category) {
   return (
     <div className="relative flex-shrink-0">
-      <div className="flex flex-shrink-0 p-4 rounded-lg bg-[#EAEEF5]">
+      <div
+        className={cn(
+          "flex flex-shrink-0 p-4 rounded-lg bg-[#EAEEF5]",
+          "flex-col items-center justify-center space-y-4",
+          "md:space-y-0 md:flex-row md:items-center md:justify-start"
+        )}
+      >
         <div
           className={cn(
             "flex h-12 w-12 items-center justify-center rounded-full bg-white"
@@ -26,8 +32,8 @@ export default function CategoryItem({
         </div>
 
         <div className="flex flex-col justify-center pl-4">
-          <h1 className="font-bold text-sm">{title}</h1>
-          <h1 className="font-[12px] text-xs">{numIcons} icons</h1>
+          <p className="font-bold text-sm">{title}</p>
+          <p className="font-[12px] text-xs">{numIcons} icons</p>
         </div>
       </div>
       {isNew && (

@@ -4,15 +4,15 @@ export default function Faq() {
   return (
     <div>
       <div className="space-y-3">
-        <h1 className="text-primary text-3xl md:text-5xl font-bold text-center">
+        <p className="text-primary text-3xl md:text-5xl font-bold text-center">
           Frequently Asked Questions
-        </h1>
-        <h4 className="text-center text-primary text-xl font-medium">
+        </p>
+        <p className="text-center text-primary text-xl font-medium">
           We'd like you to be able to use magicoon in the best way.
-        </h4>
-        <h4 className="text-center text-primary text-xl font-medium">
+        </p>
+        <p className="text-center text-primary text-xl font-medium">
           The section below will tell you how.
-        </h4>
+        </p>
       </div>
 
       <div className="space-y-4 border max-w-3xl 2xl:max-w-6xl mx-auto">
