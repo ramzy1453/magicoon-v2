@@ -10,7 +10,7 @@ type Props = {
 export default function PricingItem({ pricingItem, isMobile }: Props) {
   return (
     <div
-      className={classNames("border rounded-xl overflow-hidden", {
+      className={classNames("border rounded-xl overflow-hidden bg-white", {
         "px-5 lg:px-10 py-8 lg:py-14": !isMobile,
         "border-info relative": pricingItem.isPopular,
         "px-10 py-14": isMobile,
@@ -22,7 +22,7 @@ export default function PricingItem({ pricingItem, isMobile }: Props) {
             background:
               "linear-gradient(135deg, rgba(199,110,196,1) 11%, rgba(57,108,232,1) 100%)",
           }}
-          className="absolute cursor-pointer hover:scale-105 transition-all text-white top-0 right-0 bg-info rounded-bl-xl text-lg px-8 py-2"
+          className="absolute transition-all text-white top-0 right-0 bg-info rounded-bl-xl text-lg px-8 py-2"
         >
           Popular
         </div>

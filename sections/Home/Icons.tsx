@@ -1,4 +1,4 @@
-import IconItem, { Icon } from "@/components/Home/IconItem";
+import IconItem, { Props as Icon } from "@/components/Home/IconItem";
 import classNames from "classnames";
 import React from "react";
 import { FaAccessibleIcon } from "react-icons/fa";
@@ -34,8 +34,13 @@ export default function Icons() {
 const icons: Icon[] = [
   {
     Icon: FaAccessibleIcon,
-    style: "Solid",
-    border: "Filled",
+    style: "1 px",
+    border: "Light",
+  },
+  {
+    Icon: FaAccessibleIcon,
+    style: "1.5 px",
+    border: "Regular",
   },
   {
     Icon: FaAccessibleIcon,
@@ -44,12 +49,7 @@ const icons: Icon[] = [
   },
   {
     Icon: FaAccessibleIcon,
-    style: "Solid",
-    border: "Filled",
-  },
-  {
-    Icon: FaAccessibleIcon,
-    style: "Solid",
-    border: "Filled",
+    style: "Two Tone",
+    border: "Duotone",
   },
 ];

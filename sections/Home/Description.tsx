@@ -4,7 +4,7 @@ import DescriptionItem from "../../components/Home/DescriptionItem";
 export default function Description() {
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 bg-[#EAEEF5] rounded-xl p-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 bg-[#EAEEF5] rounded-2xl p-12">
         <DescriptionItem
           title="Figma"
           subtitle="Beta Version"

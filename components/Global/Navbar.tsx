@@ -8,11 +8,9 @@ import GradientButton from "./GradientButton";
 import GradientButtonMobile from "./GradientButtonMobile";
 
 export default function Navbar() {
-  const { isLg } = useMediaQuery();
-
   return (
     <nav className="border-b border-[#DDE2EB] bg-[#F8F9FB] sticky top-0 z-10">
-      <div className="text-medium h-24 flex items-center justify-between mx-auto max-w-[1176px] px-8">
+      <div className="text-medium h-24 flex items-center justify-between mx-auto max-w-[1176px]">
         <Link href="/">
           <Image
             src="/magicoonLogo.svg"

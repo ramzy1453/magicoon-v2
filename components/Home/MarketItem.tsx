@@ -3,13 +3,14 @@ import React from "react";
 
 type Props = {
   price?: number;
+  src: string;
 };
 
 export default function MarketItem(props: Props) {
   return (
-    <div className="card card-compact bg-base-100 shadow flex-1">
+    <div className="card card-compact bg-white border border-[#DCE3ED] flex-1">
       <Image
-        src="/1 - Detail Images - magicoon - Modern icons library 1800-1360.png"
+        src={props.src}
         alt="Shoes"
         className="rounded-tr-xl rounded-tl-xl w-full"
         width={376}
@@ -21,7 +22,9 @@ export default function MarketItem(props: Props) {
           {props.price ? (
             <p className="font-bold text-lg">${props.price}</p>
           ) : (
-            <button className="btn btn-primary btn-xs">FREE</button>
+            <button className="btn btn-primary rounded-full text-white btn-xs">
+              Free
+            </button>
           )}
         </div>
         <p className="text-sm font-bold">

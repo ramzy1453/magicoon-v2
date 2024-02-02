@@ -6,7 +6,12 @@ import { LinearGradient } from "react-text-gradients";
 export default function Categories() {
   return (
     <>
-      <div className="divider">CATEGORIES</div>
+      <div className="flex items-center justify-center space-x-4">
+        <div className="h-px w-8 bg-primary" />
+        <div className="font-bold text-center text-primary">CATEGORIES</div>
+        <div className="h-px w-8 bg-primary" />
+      </div>
+
       <LinearGradient
         gradient={["to right", "rgba(57,108,232,1) ,rgba(199,110,196,1)"]}
         className="text-5xl font-black text-center"

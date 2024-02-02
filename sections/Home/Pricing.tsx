@@ -3,7 +3,7 @@ import useMediaQuery from "@/hooks/useMediaQuery";
 import PricingMobile from "./PricingMobile";
 
 export default function Pricing() {
-  const { isSm, isMd } = useMediaQuery();
+  const { isMd } = useMediaQuery();
   if (!isMd) return <PricingMobile pricingItems={pricingItems} />;
   return (
     <>

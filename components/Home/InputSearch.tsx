@@ -14,14 +14,14 @@ export default function InputSearch(props: Props) {
     <div
       className={classNames("relative", {
         "w-1/2": !props.fullWidth,
-        "w-full" : props.fullWidth
+        "w-full": props.fullWidth,
       })}
     >
       <input
         type="search"
         id="default-search"
         className={classNames(
-          "text-black block border focus:border-black outline-none border-[#DDE2EB] w-full p-4 text-sm rounded-full placeholder-gray-400",
+          "text-black block border-2 focus:border-black outline-none border-[#DDE2EB] w-full p-4 text-sm rounded-full placeholder-gray-400",
           {
             "bg-transparent hover:bg-[#EAEEF5]": !props.isWhiteBg,
             "bg-white": props.isWhiteBg,

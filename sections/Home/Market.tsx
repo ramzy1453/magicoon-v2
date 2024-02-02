@@ -24,13 +24,10 @@ export default function Market() {
             The section below will tell you how.{" "}
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {Array(4)
-            .fill(0)
-            .map((e, i) => i * 10 + 21)
-            .map((e) => (
-              <MarketItem price={e} />
-            ))}
+        <div className="flex gap-6">
+          {market.map(({ price, src }) => (
+            <MarketItem price={price} src={src} />
+          ))}
         </div>
         <button
           className={classNames(
@@ -43,7 +40,7 @@ export default function Market() {
       </div>
 
       <div className="mt-40 flex flex-col lg:flex-row justify-around bg-[#EAEEF5] rounded-xl py-12 px-12 space-y-8 space-x-0 lg:space-x-8 lg:space-y-0 items-center lg:items-start">
-        <div className="flex-1 flex flex-col items-center space-y-8 justify-center lg:items-start">
+        <div className="flex-[3] flex flex-col items-center space-y-8 justify-center lg:items-start">
           <p className="text-5xl font-extrabold">magicoon</p>
           <LinearGradient
             gradient={[
@@ -62,13 +59,28 @@ export default function Market() {
             START NOW!
           </button>
         </div>
-        <div className="w-fit h-fit flex-1">
-          <MarketItem />
+        <div className="w-fit h-fit flex-[4]">
+          <MarketItem src="/1 - Detail Images - magicoon - Modern icons library 1800-1360.png" />
         </div>
-        <div className="w-fit h-fit flex-1">
-          <MarketItem />
+        <div className="w-fit h-fit flex-[4]">
+          <MarketItem src="/1 - Detail Images - magicoon - Modern icons library 1800-1360.png" />
         </div>
       </div>
     </>
   );
 }
+
+const market = [
+  {
+    price: 21,
+    src: "/1 - Detail Images - magicoon - Modern icons library 1800-1360.png",
+  },
+  {
+    price: 31,
+    src: "/1.png",
+  },
+  {
+    price: 41,
+    src: "/1-Detail Images-288 UI icons library-Seyfeddine Beroual.png",
+  },
+];

@@ -1,11 +1,16 @@
 import Image from "next/image";
 import React from "react";
 
-type Props = {};
+export type Props = {
+  title: string;
+  profilePicture: string;
+  description: string;
+  content: string;
+};
 
 export default function TestimonialItem(props: Props) {
   return (
-    <section className="bg-[#F8F9FB] px-10 py-12 rounded-xl select-none">
+    <section className="bg-[#F8F9FB] px-10 py-12 rounded-xl">
       <div className="flex items-center mb-8">
         <div className="btn-circle btn h-16 w-16 bg-[#DCE3ED] mr-4 flex items-center justify-center">
           <Image

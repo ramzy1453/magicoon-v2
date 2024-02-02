@@ -24,11 +24,11 @@ export default function HomePage() {
       </div>
       <div
         id="about"
-        className="mt-28 flex flex-col items-center justify-center space-y-8"
+        className="mt-28 flex flex-col items-center justify-center"
       >
         <About />
       </div>
-      <div className="mt-28 flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center">
         <Icons />
       </div>
       <div
@@ -40,7 +40,7 @@ export default function HomePage() {
       <div id="features" className="mt-28 rounded-2xl">
         <Features />
       </div>
-      <div className="mt-28 rounded-xl bg-[#EAEEF5] py-16 px-6 space-y-8">
+      <div className="mt-28 rounded-xl bg-[#EAEEF5] pt-20 pb-28 px-6 space-y-8">
         <Testimonial />
       </div>
       <div className="mt-28 flex flex-col items-center justify-center space-y-12">
@@ -52,7 +52,7 @@ export default function HomePage() {
       >
         <Pricing />
       </div>
-      <div className="mt-28 rounded-xl bg-[#EAEEF5] py-16 px-4 space-y-10">
+      <div className="mt-28 rounded-xl bg-[#EAEEF5] py-20 px-4 space-y-10">
         <Faq />
       </div>
       <div className="mt-28">

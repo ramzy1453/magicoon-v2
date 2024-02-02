@@ -37,7 +37,7 @@ export default function CategoryItem({
         </div>
       </div>
       {isNew && (
-        <div className="badge p-3 bg-[#3B6CE8] text-white absolute -top-2 -right-2 text-xs font-semibold">
+        <div className="badge rounded-md p-3 bg-[#3B6CE8] text-white absolute -top-2 right-4 text-xs font-semibold">
           NEW
         </div>
       )}

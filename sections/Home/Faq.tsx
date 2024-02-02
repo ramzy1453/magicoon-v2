@@ -1,43 +1,44 @@
-import React from "react";
+import FaqItem, { Props as IFaq } from "@/components/Home/FaqItem";
+import { useState } from "react";
 
 export default function Faq() {
+  const [open, setOpen] = useState<number | null>(null);
   return (
-    <div>
-      <div className="space-y-3">
+    <>
+      <div className="space-y-8">
         <p className="text-primary text-3xl md:text-5xl font-bold text-center">
           Frequently Asked Questions
         </p>
-        <p className="text-center text-primary text-xl font-medium">
-          We'd like you to be able to use magicoon in the best way.
-        </p>
-        <p className="text-center text-primary text-xl font-medium">
-          The section below will tell you how.
-        </p>
+        <div>
+          <p className="text-center text-primary text-xl font-medium">
+            We'd like you to be able to use magicoon in the best way.
+          </p>
+          <p className="text-center text-primary text-xl font-medium">
+            The section below will tell you how.
+          </p>
+        </div>
       </div>
 
-      <div className="space-y-4 border max-w-3xl 2xl:max-w-6xl mx-auto">
-        {faqs.map((faq) => (
-          <div className="collapse collapse-arrow bg-base-200">
-            <input type="radio" name="my-accordion-2" />
-            <div className="collapse-title md:text-xl font-medium">
-              {faq.question}
-            </div>
-            <div className="collapse-content">
-              <p>{faq.reply}</p>
-            </div>
-          </div>
+      <div className="space-y-3 max-w-3xl mx-auto">
+        {faqs.map((faq, i) => (
+          <FaqItem
+            {...faq}
+            isOpen={open === i}
+            onClick={() => {
+              if (open === i) {
+                setOpen(null);
+              } else {
+                setOpen(i);
+              }
+            }}
+          />
         ))}
       </div>
-    </div>
+    </>
   );
 }
 
-interface Faq {
-  question: string;
-  reply: string;
-}
-
-const faqs: Faq[] = [
+const faqs = [
   {
     question: "How many styles and types are included in the Iconly app?",
     reply:

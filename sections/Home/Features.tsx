@@ -19,7 +19,11 @@ export default function Features() {
         )}
       >
         <div className="flex flex-col justify-evenly flex-1">
-          <div className="divider font-bold text-2xl">FEATURES</div>
+          <div className="flex items-center relative">
+            <div className="h-px w-8 bg-primary absolute -translate-x-full -left-4" />
+            <div className="font-bold text-primary">FEATURES</div>
+          </div>
+
           <div className="space-y-8">
             <p className="text-2xl font-extrabold md:text-[44px] md:leading-[60px]">
               Different Formats & Features at your Disposal
@@ -61,8 +65,6 @@ export default function Features() {
             "linear-gradient(135deg, rgba(199,110,196,1) 11%, rgba(57,108,232,1) 100%)",
         }}
       >
-        {/*  */}
-        {/* "flex justify-between space-x-10" */}
         <div
           className={classNames(
             "gap-8",

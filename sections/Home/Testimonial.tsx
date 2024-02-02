@@ -1,42 +1,50 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 
-import TestimonialItem from "@/components/Home/TestimonialItem";
+import TestimonialItem, {
+  Props as ITestimonial,
+} from "@/components/Home/TestimonialItem";
 import "swiper/css";
 import "swiper/css/pagination";
 
 export default function Testimonial() {
   return (
     <>
-      <div className="divider text-primary text-xl">TESTIMONIALS</div>
-      <p className="text-primary text-3xl md:text-5xl font-bold text-center">
+      <div className="flex items-center justify-center space-x-4">
+        <div className="h-px w-8 bg-primary" />
+        <div className="font-bold text-center text-primary">TESTIMONIALS</div>
+        <div className="h-px w-8 bg-primary" />
+      </div>
+
+      <p className="text-primary text-3xl md:text-[44px] font-bold text-center">
         What do Say About us?
       </p>
       <Swiper
-        slidesPerView={1}
-        breakpoints={{
-          640: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          1024: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-          },
-        }}
-        modules={[Pagination, Autoplay]}
-        autoplay={{ delay: 1500 }}
-        pagination={{ clickable: true }}
+        slidesPerView={2}
+        centerInsufficientSlides
+        spaceBetween={30}
+        modules={[Autoplay]}
+        autoplay={{ delay: 800 }}
       >
         {Array(6)
-          .fill(0)
-          .map(() => (
+          .fill(testimonials[0])
+          .map((testimonial) => (
             <SwiperSlide>
-              <TestimonialItem />
+              <TestimonialItem {...testimonial} />
             </SwiperSlide>
           ))}
       </Swiper>
     </>
   );
 }
+
+const testimonials: ITestimonial[] = [
+  {
+    title: "Mais Tazagulov",
+    profilePicture: "/eren.png",
+    description: "Design Team Lead at Halolab",
+    content:
+      "Free and premium high-quality vector icons library, that provides multiple formats and styles, mane for designers and developers. Free and premium high-quality vector icons library, that provides multiple formats and styles, mane for designers and developers.",
+  },
+];
