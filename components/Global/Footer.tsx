@@ -55,9 +55,9 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="border-t border-[#DCE3ED] flex justify-between text-primary pt-6 mt-[72px]">
+      <div className="border-t border-[#DCE3ED] flex flex-col space-y-4 md:space-y-0 md:flex-row justify-between text-primary pt-6 mt-[72px]">
         <div className="space-y-3">
-          <div className="flex space-x-8">
+          <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-8">
             <Link href="https://www.magicoon.com" className="font-extrabold">
               LICENSE
             </Link>
