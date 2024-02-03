@@ -46,6 +46,7 @@ export default function Footer() {
           <div className="flex space-x-2">
             {socialMedias.map((social) => (
               <a
+                key={social.name}
                 href={social.href}
                 className="btn btn-circle btn-sm btn-info hover:bg-[#0c48d3]"
               >
@@ -84,18 +85,22 @@ export default function Footer() {
 
 const socialMedias = [
   {
+    name: "X",
     icon: FaXTwitter,
     href: "https://react-icons.github.io/react-icons/search/#q=Dribbble",
   },
   {
+    name: "Instagram",
     icon: FaInstagram,
     href: "https://react-icons.github.io/react-icons/search/#q=Dribbble",
   },
   {
+    name: "Dribbble",
     icon: FaDribbble,
     href: "https://react-icons.github.io/react-icons/search/#q=Dribbble",
   },
   {
+    name: "Facebook",
     icon: FaFacebook,
     href: "https://react-icons.github.io/react-icons/search/#q=Dribbble",
   },
