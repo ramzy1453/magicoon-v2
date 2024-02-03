@@ -19,18 +19,18 @@ export default function Hero() {
           5,400+ ICONS
         </LinearGradient>
 
-        <p className="text-5xl md:text-6xl font-black">
+        <p className="text-5xl md:text-6xl font-black mt-6">
           Ready For Your Next Project!
         </p>
       </h1>
-      <p className="text-lg text-primary text-center md:w-3/4 lg:w-1/2">
+      <p className="text-lg text-primary text-center md:w-3/4 lg:w-1/2 mt-6 mb-8">
         Free and premium high-quality vector icons library, that provides
         multiple formats and styles, made for designers and developers.
       </p>
 
       <InputSearch fullWidth={!isMd} />
 
-      <div className="flex space-x-6">
+      <div className="flex space-x-6 mt-10">
         <button className="btn text-lg btn-primary btn-outline rounded-full px-6">
           <div>LIVE PREVIEW</div>
         </button>

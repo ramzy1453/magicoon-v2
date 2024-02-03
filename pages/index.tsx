@@ -15,7 +15,7 @@ export default function HomePage() {
     <div className="">
       <div
         id="start"
-        className="mt-28 flex flex-col justify-center items-center space-y-9"
+        className="mt-28 flex flex-col justify-center items-center"
       >
         <Hero />
       </div>
