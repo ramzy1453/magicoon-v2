@@ -22,6 +22,7 @@ export default function Faq() {
       <div className="space-y-3 max-w-3xl mx-auto">
         {faqs.map((faq, i) => (
           <FaqItem
+            key={faq.id}
             {...faq}
             isOpen={open === i}
             onClick={() => {
@@ -40,31 +41,37 @@ export default function Faq() {
 
 const faqs = [
   {
+    id: 1,
     question: "How many styles and types are included in the Iconly app?",
     reply:
       "You will have access to 6 styles in the initial version we will continue to add more exciting icons in the future.",
   },
   {
+    id: 2,
     question: "Can I order custom icons for my personal project?",
     reply:
       "You will have access to 6 styles in the initial version we will continue to add more exciting icons in the future.",
   },
   {
+    id: 3,
     question: "How can I request new icons?",
     reply:
       "You will have access to 6 styles in the initial version we will continue to add more exciting icons in the future.",
   },
   {
+    id: 4,
     question: "How many devices can I use with my subscription?",
     reply:
       "You will have access to 6 styles in the initial version we will continue to add more exciting icons in the future.",
   },
   {
+    id: 5,
     question: "How can I refund my money?",
     reply:
       "You will have access to 6 styles in the initial version we will continue to add more exciting icons in the future.",
   },
   {
+    id: 6,
     question:
       "Is there any option for customizing icons and saving them for myself?",
     reply:

@@ -47,7 +47,7 @@ export default function PricingItem({ pricingItem, isMobile }: Props) {
       <div className="flex items-center justify-center mb-8">
         <button
           className={classNames(
-            "btn btn-info rounded-full btn-block hover:bg-[#124AD5]",
+            "btn btn-info text-primary-content rounded-full btn-block hover:bg-[#124AD5]",
             {
               "btn-md": isMobile,
               "btn-sm lg:btn-md": !isMobile,

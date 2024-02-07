@@ -1,7 +1,5 @@
-import { ReactNode } from "react";
 import { FaChevronRight, FaFacebook, FaInstagram } from "react-icons/fa";
 import { FaXTwitter, FaDribbble } from "react-icons/fa6";
-
 import InputSearch from "../Home/InputSearch";
 import Link from "next/link";
 
@@ -18,7 +16,7 @@ export default function Footer() {
 
               {values.map(({ name, href }) => {
                 return (
-                  <NextLink
+                  <Link
                     key={name}
                     href={href}
                     className="hover:text-black relative transition-all group"
@@ -28,7 +26,7 @@ export default function Footer() {
                       className="absolute -left-6 top-1/2 -translate-y-1/2 group-hover:-left-4 transition-all"
                     />
                     <span className="group-hover:font-bold">{name}</span>
-                  </NextLink>
+                  </Link>
                 );
               })}
             </div>
@@ -39,7 +37,14 @@ export default function Footer() {
           <p className="">
             Stay close and subscribe to Newsletter to receive new updates.
           </p>
-          <InputSearch fullWidth isPrimary isWhiteBg placeholder="Your Email" />
+          <InputSearch
+            width="full"
+            height="h-12"
+            bottomIcon="bottom-1.5"
+            isPrimary
+            isWhiteBg
+            placeholder="Your Email"
+          />
           <p className="mb-8">
             <span className="font-bold">Email:</span> Support@magicoon.com
           </p>
@@ -122,28 +127,3 @@ const links = {
     { name: "magicoon Search", href: "/contact" },
   ],
 };
-
-function NextLink({
-  href,
-  children,
-  className,
-}: {
-  href: string;
-  children: ReactNode;
-  className: string;
-}) {
-  if (href.startsWith("/")) {
-    return (
-      <Link href={href} className={className}>
-        {children}
-      </Link>
-    );
-  }
-  if (href.startsWith("#")) {
-    return (
-      <a href={href} className={className}>
-        {children}
-      </a>
-    );
-  }
-}

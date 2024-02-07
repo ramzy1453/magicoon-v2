@@ -3,11 +3,14 @@ import Footer from "@/components/Global/Footer";
 import Navbar from "@/components/Global/Navbar";
 import type { AppProps } from "next/app";
 import "@/styles/globals.css";
+import useMediaQuery from "@/hooks/useMediaQuery";
+import NavbarMobile from "@/components/Global/NavbarMobile";
 
 export default function App({ Component, pageProps }: AppProps) {
+  const { isMd } = useMediaQuery();
   return (
     <div className={cabinetGrotesk.className}>
-      <Navbar />
+      {isMd ? <Navbar /> : <NavbarMobile />}
       <main className="max-w-[1240px] mx-auto px-8">
         <Component {...pageProps} />
       </main>

@@ -13,10 +13,9 @@ export default function IconItem({ Icon, style, border }: Props) {
         <Icon size={32} color={"#25314C"} />
         <div className="text-primary-500 text-xs font-bold">{border}</div>
       </div>
-      <button className="btn px-4 bg-[#396CE8] transition-all text-xs text-white btn-sm rounded-full group-hover:bg-primary">
+      <button className="btn px-4 bg-[#396CE8] text-primary-content transition-all text-xs btn-sm rounded-full group-hover:bg-primary">
         {style}
       </button>
     </div>
   );
 }
- 

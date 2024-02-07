@@ -2,30 +2,35 @@ import FeatureItem from "@/components/Home/FeatureItem";
 import Image from "next/image";
 import classNames from "classnames";
 import dynamic from "next/dynamic";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 const AnimatedNumbers = dynamic(() => import("react-animated-numbers"), {
   ssr: false,
 });
 
 export default function Features() {
+  const { isLg } = useMediaQuery();
   return (
     <>
       <div
         className={classNames(
-          // "flex flex-col px-4 lg:px-12 py-8 space-x-0 space-y-8 bg-[#EAEEF5]",
-          // "lg:flex-row lg:justify-between lg:space-x-14 lg:space-y-0 rounded-xl"
-          "flex flex-col px-24 py-24 space-x-0 space-y-8 bg-[#EAEEF5]",
-          "lg:flex-row lg:justify-between lg:space-x-14 lg:space-y-0 rounded-xl text-primary"
+          "px-4 py-16 space-y-8 lg:space-y-0",
+          "flex flex-col lg:px-24 lg:py-24 bg-[#EAEEF5]",
+          "lg:flex-row lg:justify-between rounded-2xl text-primary"
         )}
       >
-        <div className="flex flex-col justify-evenly flex-1">
-          <div className="flex items-center relative">
-            <div className="h-px w-8 bg-primary absolute -translate-x-full -left-4" />
+        <div className="flex flex-col space-y-8 flex-1">
+          {isLg ? (
+            <div className="flex items-center relative">
+              <div className="h-px w-8 bg-primary absolute -translate-x-full -left-4" />
+              <div className="font-bold text-primary">FEATURES</div>
+            </div>
+          ) : (
             <div className="font-bold text-primary">FEATURES</div>
-          </div>
+          )}
 
           <div className="space-y-8">
-            <p className="text-2xl font-extrabold md:text-[44px] md:leading-[60px]">
+            <p className="text-5xl text-[44px] font-extrabold md:text-[44px] md:leading-[60px]">
               Different Formats & Features at your Disposal
             </p>
             <div className="flex flex-col space-y-2">
@@ -59,7 +64,7 @@ export default function Features() {
         </div>
       </div>
       <div
-        className="p-8 md:p-12 text-white rounded-br-xl rounded-bl-xl relative"
+        className="p-8 md:p-12 text-primary-content rounded-br-xl rounded-bl-xl relative"
         style={{
           background:
             "linear-gradient(135deg, rgba(199,110,196,1) 11%, rgba(57,108,232,1) 100%)",

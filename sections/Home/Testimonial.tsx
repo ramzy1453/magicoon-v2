@@ -21,16 +21,21 @@ export default function Testimonial() {
         What do Say About us?
       </p>
       <Swiper
-        slidesPerView={2}
+        slidesPerView={1}
         centerInsufficientSlides
         spaceBetween={30}
         modules={[Autoplay]}
         autoplay={{ delay: 800 }}
+        breakpoints={{
+          768: {
+            slidesPerView: 2,
+          },
+        }}
       >
         {Array(6)
           .fill(testimonials[0])
-          .map((testimonial) => (
-            <SwiperSlide>
+          .map((testimonial, i) => (
+            <SwiperSlide key={testimonial.title + i}>
               <TestimonialItem {...testimonial} />
             </SwiperSlide>
           ))}

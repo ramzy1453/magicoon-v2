@@ -28,7 +28,7 @@ export default function HomePage() {
       >
         <About />
       </div>
-      <div className="flex flex-col items-center justify-center">
+      <div className="mt-[85px] flex flex-col items-center justify-center">
         <Icons />
       </div>
       <div

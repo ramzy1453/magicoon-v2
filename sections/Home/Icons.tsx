@@ -24,7 +24,7 @@ export default function Icons() {
         )}
       >
         {icons.map((icon) => {
-          return <IconItem {...icon} />;
+          return <IconItem key={icon.border} {...icon} />;
         })}
       </div>
     </>

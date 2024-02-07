@@ -1,27 +1,3 @@
-.nav * {
-  box-sizing: border-box;
-  transition: all 0.35s ease;
-}
-
-.nav-li {
-  display: inline-block;
-  list-style: outside none none;
-  padding: 0;
-}
-
-.nav-a {
-  padding: 0.5em 0.6em;
-  position: relative;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.nav-a:hover {
-  color: #4a73db;
-}
-
-/* Path: styles/navbar.module.css */
-
 .gradient-button {
   color: #fff;
   text-align: center;

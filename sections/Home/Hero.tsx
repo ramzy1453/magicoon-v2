@@ -3,7 +3,6 @@ import { LinearGradient } from "react-text-gradients";
 import { HiLightningBolt } from "react-icons/hi";
 import InputSearch from "@/components/Home/InputSearch";
 import useMediaQuery from "@/hooks/useMediaQuery";
-
 export default function Hero() {
   const { isMd } = useMediaQuery();
   return (
@@ -28,13 +27,13 @@ export default function Hero() {
         multiple formats and styles, made for designers and developers.
       </p>
 
-      <InputSearch fullWidth={!isMd} />
+      <InputSearch width={!isMd ? "full" : undefined} />
 
       <div className="flex space-x-6 mt-10">
         <button className="btn text-lg btn-primary btn-outline rounded-full px-6">
-          <div>LIVE PREVIEW</div>
+          <div className="hover:text-primary-content">LIVE PREVIEW</div>
         </button>
-        <button className="btn text-lg btn-info hover:bg-[#0c48d3] rounded-full px-6">
+        <button className="btn text-lg btn-info hover:bg-[#0c48d3] text-primary-content rounded-full px-6">
           <HiLightningBolt size={18} /> <div>BUY NOW!</div>
         </button>
       </div>
