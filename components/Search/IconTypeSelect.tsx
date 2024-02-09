@@ -28,6 +28,7 @@ export default function IconTypeSelect({}: Props) {
         </button>
         {iconTypes.map((type, i) => (
           <button
+            key={type.name}
             onClick={() => {
               setIconType(i + 1);
             }}

@@ -28,8 +28,8 @@ export default function NotFound({}: Props) {
         No results found for “{query}”
       </div>
       <div className="text-lg text-[#91A1B8] text-center">
-        If you can't find what you're looking for, retype another keyword for
-        the icon you're looking for.
+        If you can not find what you are looking for, retype another keyword for
+        the icon you are looking for.
       </div>
     </div>
   );
