@@ -3,17 +3,17 @@ import Link from "next/link";
 import { HiLightningBolt } from "react-icons/hi";
 import Svg from "./Svg";
 import { useSearchStore } from "@/store/zustand";
-import HeroSeach from "./HeroSeach";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 type Props = {};
 
 export default function IconTypeSelect({}: Props) {
   const { color, resetColor, setColor, iconType, setIconType } =
     useSearchStore();
-
+  const { isLg } = useMediaQuery();
   return (
-    <div className="max-w-[1224px] md:max-w-[1240px] md:px-8 mx-auto flex justify-between flex-col lg:flex-row space-y-4 lg:space-y-0">
-      <div className="border border-[#E0E8F3] rounded-full flex justify-between lg:justify-center items-center py-1 px-2 space-x-2">
+    <div className="max-w-[1224 px] md:max-w-[124 0px] md:px-8 mx-auto flex justify-between flex-col lg:flex-row space-y-4 lg:space-y-0">
+      <div className="border border-[#E0E8F3] flex rounded-full justify-between lg:justify-center items-center py-1 px-2 space-x-2">
         <button
           onClick={() => {
             setIconType(0);
@@ -33,7 +33,7 @@ export default function IconTypeSelect({}: Props) {
               setIconType(i + 1);
             }}
             className={classNames(
-              "btn btn-sm rounded-full font-bold text-xs space-x-1 px-6",
+              "btn btn-sm rounded-full font-bold text-xs lg:space-x-1 lg:px-6 h-12 w-12 lg:w-fit lg:h-fit",
               {
                 "bg-success hover:bg-[#6753da] text-primary-content":
                   iconType === i + 1,
@@ -45,7 +45,7 @@ export default function IconTypeSelect({}: Props) {
               fill={iconType !== i + 1 ? "#25314C" : "#F8F9FB"}
               path={type.path}
             />
-            <span>{type.name}</span>
+            {isLg && <span>{type.name}</span>}
           </button>
         ))}
       </div>
@@ -76,7 +76,7 @@ export default function IconTypeSelect({}: Props) {
         </div>
         <Link
           href="/"
-          className="btn btn-sm md:btn-md text-md md:text-lg btn-success hover:bg-[#6753da] text-primary-content rounded-full px-6"
+          className="btn btn-sm md:btn-md text-md md:text-lg btn-success hover:bg-[#6753da] text-primary-content rounded-full lg:px-6"
         >
           <HiLightningBolt size={18} /> <span>5,400+ ICONS</span>
         </Link>
