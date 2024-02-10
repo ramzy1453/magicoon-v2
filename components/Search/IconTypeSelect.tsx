@@ -13,7 +13,7 @@ export default function IconTypeSelect({}: Props) {
   const { isLg } = useMediaQuery();
   return (
     <div className="max-w-[1224 px] md:max-w-[124 0px] md:px-8 mx-auto flex justify-between flex-col lg:flex-row space-y-4 lg:space-y-0">
-      <div className="border border-[#E0E8F3] flex rounded-full justify-between lg:justify-center items-center py-1 px-2 space-x-2">
+      <div className="border border-[#E0E8F3] flex rounded-full justify-evenly lg:justify-center items-center py-1 px-2 space-x-2">
         <button
           onClick={() => {
             setIconType(0);
