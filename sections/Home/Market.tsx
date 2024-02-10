@@ -11,7 +11,7 @@ export default function Market() {
   return (
     <>
       <div className="flex flex-col justify-center space-y-12">
-        <p className="text-5xl font-extrabold">
+        <p className="text-5xl font-extrabold text-center">
           magicoon{" "}
           <LinearGradient gradient={["to right", "#396CE8 0%, #C76EC4 100%"]}>
             Market

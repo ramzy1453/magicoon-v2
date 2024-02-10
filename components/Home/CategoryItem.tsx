@@ -20,12 +20,13 @@ export default function CategoryItem({
         className={cn(
           "flex flex-shrink-0 p-4 rounded-lg bg-[#EAEEF5]",
           "flex-col items-center justify-center space-y-4",
-          "md:space-y-0 md:flex-row md:items-center md:justify-start"
+          "md:space-y-0 md:flex-row md:items-center md:justify-start",
+          "text-center h-full"
         )}
       >
         <div
           className={cn(
-            "flex h-12 w-12 items-center justify-center rounded-full bg-white"
+            "flex btn-circle items-center justify-center rounded-full bg-white"
           )}
         >
           <FaAccessibleIcon size={24} />

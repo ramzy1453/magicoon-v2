@@ -30,7 +30,7 @@ export default function Features() {
           )}
 
           <div className="space-y-8">
-            <p className="text-5xl text-[44px] font-extrabold md:text-[44px] md:leading-[60px]">
+            <p className="leading-[56px] font-extrabold text-[45px] md:leading-[60px]">
               Different Formats & Features at your Disposal
             </p>
             <div className="flex flex-col space-y-2">
