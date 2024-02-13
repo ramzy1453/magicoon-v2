@@ -1,11 +1,11 @@
-import React from "react";
 import { LinearGradient } from "react-text-gradients";
 import styles from "../../styles/navbar.module.css";
 
-import "swiper/css";
-import "swiper/css/pagination";
 import MarketItem from "@/components/Home/MarketItem";
 import classNames from "classnames";
+
+import "swiper/css";
+import "swiper/css/pagination";
 
 export default function Market() {
   return (
@@ -22,11 +22,11 @@ export default function Market() {
             We'd like you to be able to use magicoon in the best way.
           </p>
           <p className="text-lg text-center">
-            The section below will tell you how.{" "}
+            The section below will tell you how.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {market.map(({ price, src }) => (
+          {[...market].map(({ price, src }) => (
             <MarketItem key={src} price={price} src={src} />
           ))}
         </div>
@@ -42,7 +42,7 @@ export default function Market() {
         </div>
       </div>
 
-      <div className="mt-40 flex flex-col lg:flex-row justify-around bg-[#EAEEF5] rounded-xl py-12 px-12 space-y-8 space-x-0 lg:space-x-8 lg:space-y-0 items-center lg:items-start">
+      <div className="mt-40 flex flex-col lg:flex-row justify-around bg-[#EAEEF5] rounded-xl py-12 px-12 space-y-6 space-x-0 lg:space-x-6 lg:space-y-0 items-center lg:items-start">
         <div className="flex-[1] flex flex-col items-center space-y-8 justify-center lg:items-start">
           <p className="text-5xl font-extrabold">magicoon</p>
           <LinearGradient
@@ -62,13 +62,9 @@ export default function Market() {
             START NOW!
           </button>
         </div>
-        <div className="flex flex-col sm:flex-row flex-[2] space-x-0 space-y-8 sm:space-y-0 sm:space-x-8">
-          <div className="w-fit h-fit flex-[4]">
-            <MarketItem src="/1 - Detail Images - magicoon - Modern icons library 1800-1360.png" />
-          </div>
-          <div className="w-fit h-fit flex-[4]">
-            <MarketItem src="/1 - Detail Images - magicoon - Modern icons library 1800-1360.png" />
-          </div>
+        <div className="flex flex-col sm:flex-row flex-[2] space-x-0 space-y-6 sm:space-y-0 sm:space-x-6">
+          <MarketItem src="/1-Detail Images-288 UI icons library-Seyfeddine Beroual.png" />
+          <MarketItem src="/1 - Detail Images - magicoon - Modern icons library 1800-1360.png" />
         </div>
       </div>
     </>

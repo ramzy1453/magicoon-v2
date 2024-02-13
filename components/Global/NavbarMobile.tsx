@@ -1,18 +1,13 @@
-import React, {
-  Dispatch,
-  RefObject,
-  SetStateAction,
-  useRef,
-  useState,
-} from "react";
+import { RefObject, useRef, useState } from "react";
 import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
 import { PiCaretDownFill } from "react-icons/pi";
 import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
-import { SlGrid } from "react-icons/sl";
+
 import classes from "../../styles/navbar.module.css";
 import { useOnClickOutside } from "usehooks-ts";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function NavbarMobile() {
   const [openLinks, setOpenLinks] = useState<boolean>(false);
@@ -67,7 +62,12 @@ export default function NavbarMobile() {
             classes["gradient-button"]
           )}
         >
-          <SlGrid size={16} />
+          <Image
+            src="/grid-square.svg"
+            alt="Grid Square"
+            width={16}
+            height={16}
+          />
           <div className="relative">
             <div className="rounded-full w-6 h-6 bg-white flex items-center justify-center opacity-10" />
             <PiCaretDownFill
@@ -79,7 +79,7 @@ export default function NavbarMobile() {
         </button>
       </div>
       {openLinks && (
-        <>
+        <div>
           <div className="fixed top-24 left-0 w-screen h-screen bg-black bg-opacity-[0.32] z-50" />
           <ul
             ref={ref as RefObject<HTMLUListElement>}
@@ -98,32 +98,42 @@ export default function NavbarMobile() {
               </Link>
             ))}
           </ul>
-        </>
-      )}
-      {openGradient && (
-        <div className="fixed flex flex-col top-24 left-0 w-screen h-[calc(100vh-96px)] bg-white z-[999]">
-          <div className="flex items-center p-8 text-primary">
-            <Image alt="star" src="/star.png" width={48} height={48} />
-            <p className="font-medium text-[16px] ml-8 w-2/3">
-              Discover the only digital marketplace for selling and downloading
-              icons.
-            </p>
-          </div>
-          <div className="flex flex-1 flex-col gap-4 p-8 bg-[#EAEEF5]">
-            {magicoonWebsites.map((mgc) => (
-              <div
-                key={mgc.id}
-                className="bg-white rounded-lg p-4 space-y-4 cursor-pointer hover:scale-[1.02] transition-all"
-              >
-                <Image alt="mgc" src={mgc.src} width={176} height={25} />
-                <p className="text-primary text-sm font-medium">
-                  {mgc.description}
-                </p>
-              </div>
-            ))}
-          </div>
         </div>
       )}
+      <AnimatePresence>
+        {openGradient && (
+          <motion.div
+            initial={{ scale: 0.95, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.95, opacity: 0 }}
+            transition={{ duration: 0.1 }}
+            className="fixed flex flex-col top-24 left-0 w-screen h-[calc(100vh-96px)] bg-white z-[999]"
+          >
+            <div className="flex items-center p-8 text-primary">
+              <Image alt="star" src="/star.png" width={48} height={48} />
+              <p className="font-medium text-[16px] ml-8 w-2/3">
+                Discover the only digital marketplace for selling and
+                downloading icons.
+              </p>
+            </div>
+            <div className="flex flex-1 flex-col gap-4 p-8 bg-[#EAEEF5]">
+              {magicoonWebsites.map((mgc) => (
+                <Link
+                  href={mgc.href}
+                  key={mgc.id}
+                  onClick={closeGradient}
+                  className="bg-white rounded-lg p-4 space-y-4 cursor-pointer hover:scale-[1.02] transition-all"
+                >
+                  <Image alt="mgc" src={mgc.src} width={176} height={25} />
+                  <p className="text-primary text-sm font-medium">
+                    {mgc.description}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
@@ -137,21 +147,25 @@ const links = [
 const magicoonWebsites = [
   {
     id: 0,
+    href: "",
     src: "/mgc-library.png",
     description: "One place to buy icons",
   },
   {
     id: 1,
+    href: "/search",
     src: "/mgc-search.png",
     description: "Carefully crafted Icon Packs",
   },
   {
     id: 2,
+    href: "",
     src: "/mgc-freebies.png",
     description: "Carefully crafted Icon Packs",
   },
   {
     id: 3,
+    href: "/#market",
     src: "/mgc-market.png",
     description: "One place to buy icons",
   },

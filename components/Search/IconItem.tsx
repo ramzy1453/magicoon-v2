@@ -25,12 +25,12 @@ export default function IconItem(props: Props) {
           path,
         });
       }}
-      className="px-3 flex flex-col items-center justify-center rounded-2xl cursor-pointer bg-[rgb(248,249,251)] hover:bg-[#EAEEF5] py-6 space-y-4"
+      className="flex flex-col py-4 space-y-4 px-3 items-center justify-evenly rounded-2xl cursor-pointer bg-[rgb(248,249,251)] hover:bg-[#D2DCEA]"
     >
       {cloneElement(props.path, {
-        style: { fill: props.pathColor },
+        style: { fill: props.pathColor, width: "40", height: "40" },
       })}
-      <div className="text-primary font-bold text-sm text-center">
+      <div className="text-primary font-bold text-xs text-center">
         {props.name}
       </div>
     </label>

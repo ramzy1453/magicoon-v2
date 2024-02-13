@@ -37,7 +37,7 @@ export default function Features() {
               {features.map((feature) => (
                 <div
                   key={feature}
-                  className="flex items-center text-md font-bold space-x-2"
+                  className="flex items-center text-md space-x-2"
                 >
                   <Image
                     className="mr-2 border"
@@ -46,7 +46,7 @@ export default function Features() {
                     alt="check_circle_filled"
                     src="check_circle_filled.svg"
                   />
-                  <div>{feature}</div>
+                  <p>{feature}</p>
                 </div>
               ))}
             </div>

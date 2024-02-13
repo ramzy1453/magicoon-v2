@@ -8,19 +8,19 @@ type Props = {
 
 export default function MarketItem(props: Props) {
   return (
-    <div className="card card-compact bg-white">
+    <div className="card card-compact bg-white border border-[#DCE3ED] w-94 h-94">
       <Image
         src={props.src}
         alt="Shoes"
-        className="rounded-tr-xl rounded-tl-xl w-full"
+        className="rounded-tr-xl rounded-tl-xl"
         width={376}
-        height={278}
+        height={284}
       />
       <div className="card-body">
         <div className="flex justify-between items-center">
           <p className="text-md font-medium">magicoon - 288 UI icons library</p>
           {props.price ? (
-            <p className="font-bold text-lg">${props.price}</p>
+            <p className="font-bold text-lg text-right">${props.price}</p>
           ) : (
             <button className="btn btn-primary rounded-full text-primary-content btn-xs">
               Free

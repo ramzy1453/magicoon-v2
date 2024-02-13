@@ -1,12 +1,12 @@
 "use client";
-import IconItem from "./IconItem";
+import IconItem from "../../components/Search/IconItem";
 import icons from "../../lib/icons";
 import { useSearchStore } from "@/store/zustand";
 import searchIcons from "@/lib/searchIcons";
-import IconPopup from "./IconPopup";
+import IconPopup from "../../components/Search/IconPopup";
 import { useDebounce } from "usehooks-ts";
 import { AnimatePresence } from "framer-motion";
-import NotFound from "./NotFound";
+import NotFound from "../../components/Search/NotFound";
 
 export default function IconsList() {
   const { color, iconType, query } = useSearchStore();
@@ -14,8 +14,10 @@ export default function IconsList() {
 
   const filteredIcons =
     iconType !== 0
-      ? [...icons].filter((icon) => icon.type === iconsTypes[iconType - 1])
-      : [...icons];
+      ? [...icons]
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .filter((icon) => icon.type === iconsTypes[iconType - 1])
+      : [...icons].sort((a, b) => a.name.localeCompare(b.name));
 
   const searchedIcons = searchIcons(filteredIcons, debouncedQuery, 0);
 
@@ -34,9 +36,10 @@ export default function IconsList() {
               (ICONS)
             </p>
             <div
-              className="grid gap-4"
+              className="grid gap-3"
               style={{
-                gridTemplateColumns: "repeat(auto-fill, minmax(130px, 1fr))",
+                gridTemplateColumns: "repeat(auto-fill, minmax(120px, 1fr))",
+                gridAutoRows: "calc(120px)",
               }}
             >
               {searchedIcons?.map((icon) => {

@@ -4,82 +4,114 @@ import { HiLightningBolt } from "react-icons/hi";
 import Svg from "./Svg";
 import { useSearchStore } from "@/store/zustand";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import HeroSeach from "./HeroSearch";
+import { useEffect, useState } from "react";
 
 type Props = {};
 
 export default function IconTypeSelect({}: Props) {
-  const { color, resetColor, setColor, iconType, setIconType } =
+  const { color, resetColor, setColor, iconType, setIconType, heroRef } =
     useSearchStore();
   const { isLg } = useMediaQuery();
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            setHasScrolled(true);
+          } else {
+            setHasScrolled(false);
+          }
+        });
+      },
+      { threshold: 0 }
+    );
+
+    if (heroRef.current) {
+      observer.observe(heroRef.current);
+    }
+
+    return () => {
+      if (heroRef.current) {
+        observer.unobserve(heroRef.current);
+      }
+    };
+  }, []);
+  console.log(hasScrolled);
   return (
-    <div className="max-w-[1224 px] md:max-w-[124 0px] md:px-8 mx-auto flex justify-between flex-col lg:flex-row space-y-4 lg:space-y-0">
-      <div className="border border-[#E0E8F3] flex rounded-full justify-evenly lg:justify-center items-center py-1 px-2 space-x-2">
-        <button
-          onClick={() => {
-            setIconType(0);
-          }}
-          className={classNames("btn btn-sm btn-circle text-xs", {
-            "bg-success hover:bg-[#6753da] text-primary-content":
-              iconType === 0,
-            "text-primary": iconType !== 0,
-          })}
-        >
-          ALL
-        </button>
-        {iconTypes.map((type, i) => (
+    <div className="max-w-[1224px] md:max-w-[1240px] md:px-8 pt-2 mx-auto space-y-4">
+      {hasScrolled && <HeroSeach />}
+      <div className="flex justify-between flex-col lg:flex-row space-y-4 lg:space-y-0">
+        <div className="border border-[#E0E8F3] flex rounded-full justify-evenly lg:justify-center items-center py-1 px-2 space-x-2">
           <button
-            key={type.name}
             onClick={() => {
-              setIconType(i + 1);
+              setIconType(0);
             }}
-            className={classNames(
-              "btn btn-sm rounded-full font-bold text-xs lg:space-x-1 lg:px-6 h-12 w-12 lg:w-fit lg:h-fit",
-              {
-                "bg-success hover:bg-[#6753da] text-primary-content":
-                  iconType === i + 1,
-                "text-primary": iconType !== i + 1,
-              }
-            )}
+            className={classNames("btn btn-sm btn-circle text-xs", {
+              "bg-success hover:bg-success text-primary-content":
+                iconType === 0,
+              "text-primary hover:bg-[#E0E8F3]": iconType !== 0,
+            })}
           >
-            <Svg
-              fill={iconType !== i + 1 ? "#25314C" : "#F8F9FB"}
-              path={type.path}
-            />
-            {isLg && <span>{type.name}</span>}
+            ALL
           </button>
-        ))}
-      </div>
-      <div className="flex justify-between lg:justify-start space-x-0 lg:space-x-4">
-        <div className="flex items-center justify-center space-x-3">
-          <button
-            className="btn btn-primary btn-sm rounded-full"
-            onClick={resetColor}
-          >
-            Reset
-          </button>
-          <p className="font-medium w-16">{color}</p>
-          <div
-            className="rounded-full w-6 h-6 cursor-pointer"
-            style={{
-              backgroundColor: color,
-            }}
-          >
-            <input
-              type="color"
-              className="rounded-full w-6 h-6 overflow-hidden opacity-0 cursor-pointer"
-              onChange={(e) => {
-                setColor(e.target.value);
+          {iconTypes.map((type, i) => (
+            <button
+              key={type.name}
+              onClick={() => {
+                setIconType(i + 1);
               }}
-            />
-          </div>
-          {/* <div className="w-6 h-6 bg-primary rounded-full " /> */}
+              className={classNames(
+                "btn btn-sm rounded-full font-bold text-xs lg:space-x-1 lg:px-6 h-12 w-12 lg:w-fit lg:h-fit",
+                {
+                  "bg-success hover:bg-success text-primary-content":
+                    iconType === i + 1,
+                  "text-primary hover:bg-[#E0E8F3]": iconType !== i + 1,
+                }
+              )}
+            >
+              <Svg
+                fill={iconType !== i + 1 ? "#25314C" : "#F8F9FB"}
+                path={type.path}
+              />
+              {isLg && <span>{type.name}</span>}
+            </button>
+          ))}
         </div>
-        <Link
-          href="/"
-          className="btn btn-sm md:btn-md text-md md:text-lg btn-success hover:bg-[#6753da] text-primary-content rounded-full lg:px-6"
-        >
-          <HiLightningBolt size={18} /> <span>5,400+ ICONS</span>
-        </Link>
+        <div className="flex flex-col md:flex-row justify-between lg:justify-start space-y-4 md:space-y-0 space-x-0 lg:space-x-4">
+          <div className="flex items-center justify-center space-x-3 border border-[#E0E8F3] rounded-full py-1 px-2 w-fit lg:mx-auto">
+            <button
+              className="btn btn-primary btn-sm rounded-full"
+              onClick={resetColor}
+            >
+              Reset
+            </button>
+            <p className="font-medium w-16">{color}</p>
+            <div
+              className="rounded-full w-6 h-6 cursor-pointer"
+              style={{
+                backgroundColor: color,
+              }}
+            >
+              <input
+                type="color"
+                className="rounded-full w-6 h-6 overflow-hidden opacity-0 cursor-pointer"
+                onChange={(e) => {
+                  setColor(e.target.value);
+                }}
+              />
+            </div>
+            {/* <div className="w-6 h-6 bg-primary rounded-full " /> */}
+          </div>
+          <Link
+            href="/"
+            className="btn btn-sm md:btn-md text-md md:text-lg btn-success hover:bg-[#6753da] text-primary-content rounded-full lg:px-6"
+          >
+            <HiLightningBolt size={18} /> <span>5,400+ ICONS</span>
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -1,15 +1,14 @@
 import IconTypeSelect from "@/components/Search/IconTypeSelect";
-import IconsList from "@/components/Search/IconsList";
+import IconsList from "@/sections/Search/IconsList";
 import Hero from "@/sections/Search/Hero";
 import { useSearchStore } from "@/store/zustand";
 
 export default function SearchPage() {
-  const { color } = useSearchStore();
   return (
     <div>
       <div
         id="hero"
-        className="pt-20 pb-6 bg-gradient-to-r from-[#7360DF] to-[#C499F3]"
+        className="pt-20 pb-6 bg-gradient-to-r from-[#7360DF] to-[#C499F3] shadow"
       >
         <Hero />
       </div>

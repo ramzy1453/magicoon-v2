@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import classes from "../../styles/navbar.module.css";
 import classNames from "classnames";
-import { SlGrid } from "react-icons/sl";
 import { PiCaretDownFill } from "react-icons/pi";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Navbar() {
   const [open, setOpen] = useState<boolean>();
@@ -18,7 +18,7 @@ export default function Navbar() {
 
   return (
     <nav className="border-b border-[#DDE2EB] bg-[#F8F9FB] sticky top-0 z-10 px-8">
-      <div className="text-medium h-24 flex items-center justify-between mx-auto max-w-[1176px]">
+      <div className="text-medium h -24 flex items-center justify-between mx-auto max-w-[1176px]">
         <Link href="/">
           <Image
             src="/magicoonLogo.svg"
@@ -34,7 +34,7 @@ export default function Navbar() {
               <Link
                 href={link.href}
                 key={link.name}
-                className="font-bold hover:text-info"
+                className="font-bold py-10 hover:text-info"
               >
                 {link.name}
               </Link>
@@ -55,7 +55,12 @@ export default function Navbar() {
                 classes["gradient-button"]
               )}
             >
-              <SlGrid size={16} />
+              <Image
+                src="/grid-square.svg"
+                alt="Grid Square"
+                width={16}
+                height={16}
+              />
               <div>Our Products</div>
               <div className="relative">
                 <div className="rounded-full w-6 h-6 bg-white flex items-center justify-center opacity-10" />
@@ -66,36 +71,53 @@ export default function Navbar() {
                 />
               </div>
             </button>
-            <ul
-              tabIndex={0}
-              className={classNames(
-                "mt-3 z-[1] p-0 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-[676px]",
-                {
-                  hidden: !open,
-                }
-              )}
-            >
-              <div className="flex items-center p-8 text-primary">
-                <Image alt="star" src="/star.png" width={48} height={48} />
-                <p className="font-medium text-[16px] ml-8 w-2/3">
-                  Discover the only digital marketplace for selling and
-                  downloading icons.
-                </p>
-              </div>
-              <div className="grid grid-cols-2 gap-4 p-8 bg-[#EAEEF5]">
-                {magicoonWebsites.map((mgc) => (
-                  <div
-                    key={mgc.id}
-                    className="bg-white rounded-lg p-4 space-y-4 cursor-pointer hover:scale-[1.02] transition-all"
-                  >
-                    <Image alt="mgc" src={mgc.src} width={176} height={25} />
-                    <p className="text-primary text-sm font-medium">
-                      {mgc.description}
+            <AnimatePresence>
+              {open && (
+                <motion.ul
+                  initial={{ scale: 0.95, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.95, opacity: 0 }}
+                  transition={{ duration: 0.1 }}
+                  tabIndex={0}
+                  className={classNames(
+                    "mt-3 z-[1] p-0 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-[676px]",
+                    {
+                      hidden: !open,
+                    }
+                  )}
+                >
+                  <div className="flex items-center p-8 text-primary">
+                    <Image alt="star" src="/star.png" width={48} height={48} />
+                    <p className="font-medium text-[16px] ml-8 w-2/3">
+                      Discover the only digital marketplace for selling and
+                      downloading icons.
                     </p>
                   </div>
-                ))}
-              </div>
-            </ul>
+                  <div className="grid grid-cols-2 gap-4 p-8 bg-[#EAEEF5]">
+                    {magicoonWebsites.map((mgc) => (
+                      <Link
+                        href={mgc.href}
+                        key={mgc.id}
+                        onClick={() => {
+                          setOpen(false);
+                        }}
+                        className="bg-white rounded-lg p-4 space-y-4 cursor-pointer hover:scale-[1.02] transition-all"
+                      >
+                        <Image
+                          alt="mgc"
+                          src={mgc.src}
+                          width={176}
+                          height={25}
+                        />
+                        <p className="text-primary text-sm font-medium">
+                          {mgc.description}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                </motion.ul>
+              )}
+            </AnimatePresence>
           </div>{" "}
         </div>
       </div>
@@ -112,21 +134,25 @@ const links = [
 const magicoonWebsites = [
   {
     id: 0,
+    href: "",
     src: "/mgc-library.png",
     description: "One place to buy icons",
   },
   {
     id: 1,
+    href: "/search",
     src: "/mgc-search.png",
     description: "Carefully crafted Icon Packs",
   },
   {
     id: 2,
+    href: "",
     src: "/mgc-freebies.png",
     description: "Carefully crafted Icon Packs",
   },
   {
     id: 3,
+    href: "/#market",
     src: "/mgc-market.png",
     description: "One place to buy icons",
   },

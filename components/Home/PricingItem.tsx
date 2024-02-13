@@ -10,27 +10,21 @@ type Props = {
 export default function PricingItem({ pricingItem, isMobile }: Props) {
   return (
     <div
-      className={classNames("border rounded-xl overflow-hidden bg-white", {
+      className={classNames("border rounded-2xl overflow-hidden bg-white", {
         "px-5 lg:px-10 py-8 lg:py-14": !isMobile,
         "border-info relative": pricingItem.isPopular,
         "px-10 py-14": isMobile,
       })}
     >
       {pricingItem.isPopular && (
-        <div
-          style={{
-            background:
-              "linear-gradient(135deg, rgba(199,110,196,1) 11%, rgba(57,108,232,1) 100%)",
-          }}
-          className="absolute transition-all text-white top-0 right-0 bg-info rounded-bl-xl text-lg px-8 py-2"
-        >
+        <div className="bg-info absolute transition-all text-white top-0 right-0 rounded-bl-2xl text-lg px-6 py-2">
           Popular
         </div>
       )}
       <div id="header" className="flex flex-col space-y-4 mb-6">
         <div>
           <p className="text-primary text-md font-black">{pricingItem.title}</p>
-          <p>For solo work as a designer or developer.</p>
+          <p className="font-medium text-sm">{pricingItem.description} </p>
         </div>
         <div className="flex items-center space-x-4">
           <p

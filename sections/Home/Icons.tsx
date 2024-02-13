@@ -1,6 +1,5 @@
 import IconItem, { Props as Icon } from "@/components/Home/IconItem";
 import classNames from "classnames";
-import React from "react";
 import { FaAccessibleIcon } from "react-icons/fa";
 
 export default function Icons() {

@@ -15,6 +15,7 @@ type SearchStore = {
   isModalShown: boolean;
   hideModal: () => void;
   showModal: () => void;
+  heroRef: React.RefObject<HTMLDivElement>;
 };
 
 export const useSearchStore = create<SearchStore>((set) => ({
@@ -31,4 +32,5 @@ export const useSearchStore = create<SearchStore>((set) => ({
   isModalShown: false,
   hideModal: () => set({ isModalShown: false }),
   showModal: () => set({ isModalShown: true }),
+  heroRef: { current: null },
 }));

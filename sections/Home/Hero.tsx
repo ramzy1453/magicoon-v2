@@ -3,8 +3,13 @@ import { LinearGradient } from "react-text-gradients";
 import { HiLightningBolt } from "react-icons/hi";
 import InputSearch from "@/components/Home/InputSearch";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import { useSearchStore } from "@/store/zustand";
+import { useRouter } from "next/navigation";
 export default function Hero() {
   const { isMd } = useMediaQuery();
+  const { setQuery } = useSearchStore();
+  const router = useRouter();
+
   return (
     <>
       <h1 className="text-center">
@@ -27,7 +32,7 @@ export default function Hero() {
         multiple formats and styles, made for designers and developers.
       </p>
 
-      <InputSearch width={!isMd ? "full" : undefined} />
+      <InputSearch width={!isMd ? "full" : undefined} setQuery={setQuery} />
 
       <div className="flex space-x-6 mt-10">
         <button className="btn text-lg btn-primary btn-outline rounded-full px-6">

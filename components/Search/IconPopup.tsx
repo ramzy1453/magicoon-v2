@@ -13,11 +13,19 @@ import { IoMdClose } from "react-icons/io";
 import { useCopyToClipboard, useOnClickOutside } from "usehooks-ts";
 import reactElementToJSXString from "react-element-to-jsx-string";
 import { motion } from "framer-motion";
+import useMediaQuery from "@/hooks/useMediaQuery";
+import classNames from "classnames";
 
 export default function IconPopup() {
   const [_, copy] = useCopyToClipboard();
-  const { selectedIcon, clearSelectedIcon, hideModal } = useSearchStore();
-  const svg = reactElementToJSXString(selectedIcon?.path);
+  const { selectedIcon, color, hideModal } = useSearchStore();
+  const { isSm } = useMediaQuery();
+  const clonedSvg = cloneElement(selectedIcon?.path as ReactElement, {
+    width: "96",
+    height: "96",
+    fill: color,
+  });
+  const svg = reactElementToJSXString(clonedSvg);
   const handleCopy = async (text: string) => {
     try {
       await copy(text);
@@ -80,15 +88,17 @@ export default function IconPopup() {
             </div>
             <div className="p-8 flex space-x-6 border-b border-[#E0E8F3]">
               <div className="bg-[#E0E8F3] rounded-xl flex flex-col items-center justify-center w-[168px] h-[168px] space-y-4 px-9 pt-6 pb-4">
-                {cloneElement(selectedIcon?.path as ReactElement, {
-                  width: "96",
-                  height: "96",
-                })}
-                <span className="text-sm font-bold">{selectedIcon?.type}</span>
+                {clonedSvg}
+                <span className="text-sm font-bold" style={{ color }}>
+                  {selectedIcon?.type}
+                </span>
               </div>
-              <div className="flex-1 flex flex-col justify-between">
+              <div className="flex-1 flex flex-col justify-between items-center sm:items-start">
                 <button
-                  className="btn btn-primary rounded-full"
+                  className={classNames("btn btn-primary rounded-full", {
+                    "btn-circle": !isSm,
+                    "btn-block": isSm,
+                  })}
                   onClick={download}
                 >
                   <svg
@@ -103,13 +113,19 @@ export default function IconPopup() {
                       fill="#FCFDFF"
                     />
                   </svg>
-                  Download
+                  {isSm && "Download"}
                 </button>
                 <button
                   onClick={() => {
                     handleCopy(svg);
                   }}
-                  className="btn rounded-full border-2 border-[#25314C] hover:border-2 hover:border-[#25314C]"
+                  className={classNames(
+                    "btn rounded-full border-2 border-[#25314C] hover:border-2 hover:border-[#25314C]",
+                    {
+                      "btn-circle": !isSm,
+                      "btn-block": isSm,
+                    }
+                  )}
                 >
                   <svg
                     width="24"
@@ -128,11 +144,18 @@ export default function IconPopup() {
                       fill="#25314C"
                     />
                   </svg>
-                  Copy SVG
+
+                  {isSm && "Copy SVG"}
                 </button>
                 <Link
                   href="/"
-                  className="btn bg-[#11BC7F] text-primary-content hover:bg-[#61cea8] rounded-full"
+                  className={classNames(
+                    "btn bg-[#11BC7F] text-primary-content hover:bg-[#61cea8] rounded-full",
+                    {
+                      "btn-circle": !isSm,
+                      "btn-block": isSm,
+                    }
+                  )}
                 >
                   <svg
                     width="24"
@@ -146,21 +169,21 @@ export default function IconPopup() {
                       fill="white"
                     />
                   </svg>
-                  Upgrade to Pro
+                  {isSm && "Upgrade to Pro"}
                 </Link>
               </div>
             </div>
             <div className="flex justify-center items-center px-8 py-6">
               <div className="flex justify-center bg-white text-primary rounded-lg border border-[#E0E8F3]">
                 <Image
-                  className="rounded-tl-lg rounded-bl-lg"
+                  className="rounded-tl-lg rounded-bl-lg border-l border-[#E0E8F3]"
                   alt="hero-search"
                   src="/hero-search.jpeg"
                   width={172}
                   height={132}
                 />
                 <div className="flex flex-col justify-center items-center p-4 space-y-[10px] font-medium text-sm">
-                  <p className="w-[188px]">
+                  <p className="max-w-[188px]">
                     high-quality essential UI icons, modernly designed,
                     featuring multiple styles, and categories.
                   </p>

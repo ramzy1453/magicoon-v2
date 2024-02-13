@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 
@@ -9,6 +10,7 @@ type Props = {
   isWhiteBg?: boolean;
   height?: string;
   bottomIcon?: string;
+  setQuery?: (query: string) => void;
 };
 
 export default function InputSearch({
@@ -18,7 +20,10 @@ export default function InputSearch({
   isWhiteBg,
   height = "h-14",
   bottomIcon = "bottom-2.5",
+  setQuery,
 }: Props) {
+  const router = useRouter();
+  const [value, setValue] = React.useState("");
   return (
     <div
       className={classNames(
@@ -31,6 +36,10 @@ export default function InputSearch({
       )}
     >
       <input
+        value={value}
+        onChange={(e) => {
+          setValue(e.target.value);
+        }}
         type="search"
         id="default-search"
         className={classNames(
@@ -45,7 +54,12 @@ export default function InputSearch({
         required
       />
       <button
-        type="submit"
+        onClick={() => {
+          if (setQuery) {
+            setQuery(value);
+            router.push("/search");
+          }
+        }}
         className={classNames(
           "transition-all text-white absolute end-2.5 font-medium rounded-full text-sm p-2",
           bottomIcon,
