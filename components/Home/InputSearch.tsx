@@ -40,6 +40,14 @@ export default function InputSearch({
         onChange={(e) => {
           setValue(e.target.value);
         }}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            if (setQuery) {
+              setQuery(value);
+              router.push("/search");
+            }
+          }
+        }}
         type="search"
         id="default-search"
         className={classNames(
