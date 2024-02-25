@@ -1,10 +1,8 @@
 import { useSearchStore } from "@/store/zustand";
-import React from "react";
 
-type Props = {};
-
-export default function NotFound({}: Props) {
+export default function NotFound() {
   const { query } = useSearchStore();
+
   return (
     <div className="space-y-3 flex flex-col items-center justify-center bg-[#FCFDFF] p-12 rounded-xl text-center">
       <svg

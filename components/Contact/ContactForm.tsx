@@ -35,9 +35,9 @@ export default function ContactForm({ formik }: Props) {
       />
       <SelectForm
         selectOptions={selectOptions}
-        setSubject={(subject: string) =>
-          formik.setFieldValue("subject", subject)
-        }
+        setSubject={(subject: string) => {
+          formik.setFieldValue("subject", subject);
+        }}
       />
       <InputForm
         id="message"

@@ -16,7 +16,16 @@ export default function PricingMobile({ pricingItems }: Props) {
   const [activeTab, setActiveTab] = useState(1);
   return (
     <>
-      <div className="border overflow-hidden rounded-xl flex items-center justify-center mb-8">
+      <p className="text-4xl font-black mb-7 text-center">Pricing</p>
+      <div>
+        <p className="text-lg text-center font-medium">
+          Choose the best plan for you!
+        </p>
+        <p className="text-lg font-medium text-center">
+          It doesn't end here, you are getting a lifetime of free updates
+        </p>
+      </div>
+      <div className="border overflow-hidden rounded-xl flex items-center justify-center my-8">
         {pricingItems.map((e, i) => (
           <a
             key={e.title}

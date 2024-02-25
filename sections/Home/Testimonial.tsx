@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 
 import TestimonialItem, {
   Props as ITestimonial,
@@ -24,8 +24,15 @@ export default function Testimonial() {
         slidesPerView={1}
         centerInsufficientSlides
         spaceBetween={30}
-        modules={[Autoplay]}
-        autoplay={{ delay: 800 }}
+        modules={[Autoplay, Pagination]}
+        pagination={{
+          clickable: true,
+          renderBullet(index, className) {
+            console.log(className);
+            return `<span class="${className} my-16 bg-primary-500"></span>`;
+          },
+        }}
+        autoplay={{ delay: 3000 }}
         breakpoints={{
           768: {
             slidesPerView: 2,

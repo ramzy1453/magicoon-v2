@@ -1,4 +1,5 @@
 import useMediaQuery from "@/hooks/useMediaQuery";
+import classNames from "classnames";
 import React from "react";
 
 type Props = {};
@@ -10,13 +11,18 @@ export default function TermsOfUse({}: Props) {
   return (
     <div className="flex flex-col sm:flex-row my-28 space-y-6 space-x-0 sm:space-x-6 sm:space-y-0">
       {isSm && (
-        <ul className="border flex-[3] xl:flex-[1] rounded-xl h-fit">
+        <ul className="flex-[3] xl:flex-[1] rounded-xl h-fit border sticky top-28 left-0">
           <li className="font-bold border-b py-2 px-6">Products</li>
 
           {["Library", "Search", "Market", "Freebies"].map((page, i) => (
             <li
               key={page}
-              className="hover:bg-info hover:text-white rounded-full cursor-pointer py-2 px-6 my-2 mx-4"
+              className={classNames(
+                "hover:bg-info hover:text-white rounded-full cursor-pointer py-2 px-6 my-2 mx-4",
+                {
+                  "bg-info text-white": selected === i,
+                }
+              )}
               onClick={() => {
                 setSelected(i);
               }}

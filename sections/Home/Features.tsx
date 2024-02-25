@@ -1,15 +1,11 @@
-import FeatureItem from "@/components/Home/FeatureItem";
 import Image from "next/image";
 import classNames from "classnames";
-import dynamic from "next/dynamic";
+import FeatureItem from "@/components/Home/FeatureItem";
 import useMediaQuery from "@/hooks/useMediaQuery";
-
-const AnimatedNumbers = dynamic(() => import("react-animated-numbers"), {
-  ssr: false,
-});
 
 export default function Features() {
   const { isLg } = useMediaQuery();
+
   return (
     <>
       <div
@@ -86,14 +82,7 @@ export default function Features() {
 
           {iconsDescriptions.map(([n, title, subtitle]) => (
             <div className="flex flex-col space-y-2 flex-[17.5]" key={title}>
-              <AnimatedNumbers
-                fontStyle={{
-                  fontWeight: 900,
-                  fontSize: "36px",
-                }}
-                animateToNumber={n as number}
-                includeComma
-              />
+              <p className="font-black text-4xl">{n}</p>
               <p className="font-extrabold text-md">{title}</p>
               <p className="font-medium text-md">{subtitle}</p>
             </div>

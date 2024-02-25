@@ -25,7 +25,7 @@ export default function Market() {
             The section below will tell you how.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-6">
           {[...market].map(({ price, src }) => (
             <MarketItem key={src} price={price} src={src} />
           ))}
@@ -44,16 +44,18 @@ export default function Market() {
 
       <div className="mt-40 flex flex-col lg:flex-row justify-around bg-[#EAEEF5] rounded-xl py-12 px-12 space-y-6 space-x-0 lg:space-x-6 lg:space-y-0 items-center lg:items-start">
         <div className="flex-[1] flex flex-col items-center space-y-8 justify-center lg:items-start">
-          <p className="text-5xl font-extrabold">magicoon</p>
-          <LinearGradient
-            gradient={[
-              "to right",
-              "rgba(199,110,196,1) 0%, rgba(255,144,152,1) 49%, rgba(57,108,232,1) 100%",
-            ]}
-            className="text-5xl font-extrabold"
-          >
-            Market
-          </LinearGradient>
+          <div className="">
+            <p className="text-5xl font-extrabold mb-4">magicoon</p>
+            <LinearGradient
+              gradient={[
+                "to right",
+                "rgba(199,110,196,1) 0%, rgba(255,144,152,1) 49%, rgba(57,108,232,1) 100%",
+              ]}
+              className="text-5xl font-extrabold"
+            >
+              Freebies
+            </LinearGradient>
+          </div>
           <p className="text-lg font-medium text-center lg:text-left">
             We'd like you to be able to use magicoon in the best way. The
             section below will tell you how.
@@ -62,7 +64,7 @@ export default function Market() {
             START NOW!
           </button>
         </div>
-        <div className="flex flex-col sm:flex-row flex-[2] space-x-0 space-y-6 sm:space-y-0 sm:space-x-6">
+        <div className="flex flex-col sm:flex-row space-x-0 space-y-6 sm:space-y-0 sm:space-x-6">
           <MarketItem src="/1-Detail Images-288 UI icons library-Seyfeddine Beroual.png" />
           <MarketItem src="/1 - Detail Images - magicoon - Modern icons library 1800-1360.png" />
         </div>

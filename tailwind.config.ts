@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss";
+import defaultTheme from "tailwindcss/defaultTheme";
+import daisyuiTheming from "daisyui/src/theming/themes";
 
 const config: Config = {
   content: [
@@ -7,12 +9,19 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  plugins: [require("daisyui")],
+  theme: {
+    screens: {
+      tablet: "750px",
+      laptop: "900px",
+      ...defaultTheme.screens,
+    },
+  },
+  plugins: [require("daisyui"), require("@tailwindcss/aspect-ratio")],
   daisyui: {
     themes: [
       {
         light: {
-          ...require("daisyui/src/theming/themes")["[data-theme=light]"],
+          ...daisyuiTheming["[data-theme=light]"],
           primary: "#25314C",
           "primary-content": "#F8F9FB",
           secondary: "#8B97B4",

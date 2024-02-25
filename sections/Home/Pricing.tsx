@@ -3,16 +3,16 @@ import useMediaQuery from "@/hooks/useMediaQuery";
 import PricingMobile from "./PricingMobile";
 
 export default function Pricing() {
-  const { isMd } = useMediaQuery();
-  if (!isMd) return <PricingMobile pricingItems={pricingItems} />;
+  const { isMd, isLg } = useMediaQuery();
+  if (!isLg) return <PricingMobile pricingItems={pricingItems} />;
   return (
     <>
       <p className="text-4xl font-black mb-7 text-center">Pricing</p>
       <div>
-        <p className="text-sm text-center font-medium">
+        <p className="text-lg text-center font-medium">
           Choose the best plan for you!
         </p>
-        <p className="text-sm font-medium text-center">
+        <p className="text-lg font-medium text-center">
           It doesn't end here, you are getting a lifetime of free updates
         </p>
       </div>

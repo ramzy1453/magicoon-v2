@@ -31,7 +31,7 @@ export default function Hero() {
           </p>
         </div>
         <div className="flex flex-1 justify-center md:justify-end items-center">
-          <div className="flex bg-white text-primary rounded-lg">
+          <div className="flex flex-col md:flex-row  bg-white text-primary rounded-lg min-h-[132px]">
             <Image
               className="rounded-tl-lg rounded-bl-lg"
               alt="hero-search"
@@ -39,8 +39,8 @@ export default function Hero() {
               width={172}
               height={132}
             />
-            <div className="flex flex-col justify-center items-center p-4 space-y-[10px] font-medium text-sm">
-              <p className="max-w-[188px]">
+            <div className="flex flex-col w-[204px] justify-center items-center p-4 space-y-[10px] font-medium text-sm">
+              <p className="">
                 high-quality essential UI icons, modernly designed, featuring
                 multiple styles, and categories.
               </p>

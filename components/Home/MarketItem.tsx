@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 type Props = {
@@ -8,11 +9,14 @@ type Props = {
 
 export default function MarketItem(props: Props) {
   return (
-    <div className="card card-compact bg-white border border-[#DCE3ED] w-94 h-94">
+    <Link
+      href="/search"
+      className="card card-compact bg-white border border-[#DCE3ED] w-94 h-94 cursor-pointer hover:shadow transition"
+    >
       <Image
         src={props.src}
         alt="Shoes"
-        className="rounded-tr-xl rounded-tl-xl"
+        className="rounded-tr-xl rounded-tl-xl w-full"
         width={376}
         height={284}
       />
@@ -32,6 +36,6 @@ export default function MarketItem(props: Props) {
           magicoon Library
         </p>
       </div>
-    </div>
+    </Link>
   );
 }

@@ -1,7 +1,6 @@
 import IconTypeSelect from "@/components/Search/IconTypeSelect";
 import IconsList from "@/sections/Search/IconsList";
 import Hero from "@/sections/Search/Hero";
-import { useSearchStore } from "@/store/zustand";
 
 export default function SearchPage() {
   return (
@@ -12,7 +11,7 @@ export default function SearchPage() {
       >
         <Hero />
       </div>
-      <div className="px-6 py-4 p-0 bg-primary-content sticky top-24">
+      <div className="px-6 py-4 p-0 bg-primary-content sticky top-0">
         <IconTypeSelect />
       </div>
       <div className="pt-12 pb-20 bg-[#E0E8F3]">

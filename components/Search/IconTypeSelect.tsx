@@ -7,13 +7,11 @@ import useMediaQuery from "@/hooks/useMediaQuery";
 import HeroSeach from "./HeroSearch";
 import { useEffect, useState } from "react";
 
-type Props = {};
-
-export default function IconTypeSelect({}: Props) {
+export default function IconTypeSelect() {
   const { color, resetColor, setColor, iconType, setIconType, heroRef } =
     useSearchStore();
-  const { isLg } = useMediaQuery();
   const [hasScrolled, setHasScrolled] = useState(false);
+  const { isXXs } = useMediaQuery();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -39,7 +37,6 @@ export default function IconTypeSelect({}: Props) {
       }
     };
   }, []);
-  console.log(hasScrolled);
   return (
     <div className="max-w-[1224px] md:max-w-[1240px] md:px-8 pt-2 mx-auto space-y-4">
       {hasScrolled && <HeroSeach />}
@@ -76,11 +73,11 @@ export default function IconTypeSelect({}: Props) {
                 fill={iconType !== i + 1 ? "#25314C" : "#F8F9FB"}
                 path={type.path}
               />
-              {isLg && <span>{type.name}</span>}
+              <span>{type.name}</span>
             </button>
           ))}
         </div>
-        <div className="flex flex-col md:flex-row justify-between lg:justify-start space-y-4 md:space-y-0 space-x-0 lg:space-x-4">
+        <div className="flex flex-row justify-between items-center lg:justify-start space-x-4">
           <div className="flex items-center justify-center space-x-3 border border-[#E0E8F3] rounded-full py-1 px-2 w-fit lg:mx-auto">
             <button
               className="btn btn-primary btn-sm rounded-full"
@@ -107,9 +104,14 @@ export default function IconTypeSelect({}: Props) {
           </div>
           <Link
             href="/"
-            className="btn btn-sm md:btn-md text-md md:text-lg btn-success hover:bg-[#6753da] text-primary-content rounded-full lg:px-6"
+            className={classNames(
+              "btn btn-sm md:btn-md text-md md:text-lg btn-success hover:bg-[#6753da] text-primary-content rounded-full lg:px-6",
+              {
+                isXXs: "btn-circle",
+              }
+            )}
           >
-            <HiLightningBolt size={18} /> <span>5,400+ ICONS</span>
+            <HiLightningBolt size={18} /> {!isXXs && <span>5,400+ ICONS</span>}
           </Link>
         </div>
       </div>

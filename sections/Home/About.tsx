@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "../../styles/iframe-video.module.css";
 
 type Props = {};
 
@@ -11,14 +12,13 @@ export default function About({}: Props) {
         freelancers, one icons library allows you to work on many different
         projects for one client.
       </p>
-      <div className="iframe-video mb-[85px]">
+      <div className="mb-[85px]">
         <iframe
-          width="960"
-          height="540"
           src="https://www.youtube.com/embed/5A6SGzDfsko?controls=0"
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
+          className={styles.iframe}
         ></iframe>
       </div>
 

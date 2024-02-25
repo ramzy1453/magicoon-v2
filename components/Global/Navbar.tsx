@@ -79,8 +79,9 @@ export default function Navbar() {
                   exit={{ scale: 0.95, opacity: 0 }}
                   transition={{ duration: 0.1 }}
                   tabIndex={0}
+                  style={{ boxShadow: "0px 4px 12px #8594B480" }}
                   className={classNames(
-                    "mt-3 z-[1] p-0 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-[676px]",
+                    "mt-3 z-[1] p-0 menu menu-sm dropdown-content bg-base-100 rounded-box w-[676px]",
                     {
                       hidden: !open,
                     }
@@ -93,7 +94,7 @@ export default function Navbar() {
                       downloading icons.
                     </p>
                   </div>
-                  <div className="grid grid-cols-2 gap-4 p-8 bg-[#EAEEF5]">
+                  <div className="grid grid-cols-2 gap-4 p-8 bg-[#EAEEF5] rounded-b-box">
                     {magicoonWebsites.map((mgc) => (
                       <Link
                         href={mgc.href}

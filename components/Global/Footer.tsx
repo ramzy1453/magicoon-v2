@@ -6,7 +6,6 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <div className="bg-[#EAEEF5] mt-40 pt-16 pb-8">
-      {" "}
       <div className="px-6 max-w-[1224px] md:max-w-[1240px] md:px-8 mx-auto">
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {Object.entries(links).map(([category, values]) => {
@@ -18,16 +17,18 @@ export default function Footer() {
 
                 {values.map(({ name, href }) => {
                   return (
-                    <Link
+                    <span
                       key={name}
-                      href={href}
                       className="hover:text-black transition-all group flex items-center"
                     >
                       <FaChevronRight size={10} />
-                      <span className="ml-4 group-hover:ml-2 group-hover:font-bold transition-all">
+                      <Link
+                        href={href}
+                        className="ml-4 group-hover:ml-2 group-hover:font-bold transition-all"
+                      >
                         {name}
-                      </span>
-                    </Link>
+                      </Link>
+                    </span>
                   );
                 })}
               </div>

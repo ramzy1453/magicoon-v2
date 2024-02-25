@@ -3,7 +3,7 @@ import { ChangeEvent } from "react";
 import { FaSearch, FaTimes } from "react-icons/fa";
 
 export default function HeroSearch() {
-  const { setQuery, query } = useSearchStore();
+  const { query, setQuery } = useSearchStore();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);

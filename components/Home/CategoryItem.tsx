@@ -32,7 +32,7 @@ export default function CategoryItem({
           <FaAccessibleIcon size={24} />
         </div>
 
-        <div className="flex flex-col justify-center pl-4">
+        <div className="flex flex-col justify-center md:ml-4">
           <p className="font-bold text-sm">{title}</p>
           <p className="font-[12px] text-xs">{numIcons} icons</p>
         </div>

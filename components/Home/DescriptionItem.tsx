@@ -30,7 +30,7 @@ export default function DescriptionItem(props: Props) {
       </div>
       <div className="flex flex-col">
         <p
-          className={cn("text-[28px] text-primary font-extrabold", {
+          className={cn("text-[28px] text-primary font-black", {
             "group-hover:text-white": props.firstElement,
           })}
         >

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 interface BreakpointPoint<T = boolean> {
+  isXXs: T;
   isXs: T;
   isSm: T;
   isMd: T;
@@ -11,6 +12,7 @@ interface BreakpointPoint<T = boolean> {
 
 const useMediaQuery = () => {
   const breakpointsConfig: BreakpointPoint<string> = {
+    isXXs: "(max-width: 420px)",
     isXs: "(max-width: 639px)",
     isSm: "(min-width: 640px)",
     isMd: "(min-width: 768px)",
@@ -20,6 +22,7 @@ const useMediaQuery = () => {
   };
 
   const [breakpoints, setBreakpoints] = useState<BreakpointPoint>({
+    isXXs: false,
     isXs: false,
     isSm: false,
     isMd: false,
@@ -31,6 +34,7 @@ const useMediaQuery = () => {
   useEffect(() => {
     const updateBreakpoints = () => {
       const updatedBreakpoints: BreakpointPoint = {
+        isXXs: window.matchMedia(breakpointsConfig.isXXs).matches,
         isXs: window.matchMedia(breakpointsConfig.isXs).matches,
         isSm: window.matchMedia(breakpointsConfig.isSm).matches,
         isMd: window.matchMedia(breakpointsConfig.isMd).matches,

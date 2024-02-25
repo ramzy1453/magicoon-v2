@@ -36,7 +36,7 @@ export default function NavbarMobile() {
   const HamburgerIcon = openLinks ? RxCross1 : RxHamburgerMenu;
   return (
     <>
-      <div className="px-6 flex items-center justify-between border-b border-[#DDE2EB] bg-[#F8F9FB] sticky top-0 z-10 h-24">
+      <div className="px-6 flex items-center justify-between border-b border-[#DDE2EB] bg-[#F8F9FB] top-0 z-10 h-24">
         <div className="space-x-6 flex items-center justify-center">
           <HamburgerIcon
             size={24}
@@ -103,6 +103,7 @@ export default function NavbarMobile() {
       <AnimatePresence>
         {openGradient && (
           <motion.div
+            style={{ boxShadow: "0px 4px 12px #8594B480" }}
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}

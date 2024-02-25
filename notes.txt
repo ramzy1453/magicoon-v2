@@ -1,0 +1,5 @@
+Web Dev:
+
+1 - HTML : Structure of our website
+2 - CSS : Design / Styling of our website
+3 - JavaScript (JS) : Brain of our website

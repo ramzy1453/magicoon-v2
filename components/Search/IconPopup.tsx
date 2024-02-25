@@ -86,19 +86,20 @@ export default function IconPopup() {
                 onClick={hideModal}
               />
             </div>
-            <div className="p-8 flex space-x-6 border-b border-[#E0E8F3]">
-              <div className="bg-[#E0E8F3] rounded-xl flex flex-col items-center justify-center w-[168px] h-[168px] space-y-4 px-9 pt-6 pb-4">
-                {clonedSvg}
-                <span className="text-sm font-bold" style={{ color }}>
-                  {selectedIcon?.type}
-                </span>
+            <div className="p-8 space-y-6 sm:space-y-0 flex flex-col sm:flex-row space-x-0 sm:space-x-6 border-b border-[#E0E8F3]">
+              <div className="flex items-center justify-center">
+                <div className="bg-[#E0E8F3] rounded-xl flex flex-col items-center justify-center w-[168px] h-[168px] space-y-4 px-9 pt-6 pb-4">
+                  {clonedSvg}
+                  <span className="text-sm font-bold" style={{ color }}>
+                    {selectedIcon?.type}
+                  </span>
+                </div>
               </div>
               <div className="flex-1 flex flex-col justify-between items-center sm:items-start">
                 <button
-                  className={classNames("btn btn-primary rounded-full", {
-                    "btn-circle": !isSm,
-                    "btn-block": isSm,
-                  })}
+                  className={classNames(
+                    "btn btn-primary rounded-full btn-block"
+                  )}
                   onClick={download}
                 >
                   <svg
@@ -113,18 +114,14 @@ export default function IconPopup() {
                       fill="#FCFDFF"
                     />
                   </svg>
-                  {isSm && "Download"}
+                  Download
                 </button>
                 <button
                   onClick={() => {
                     handleCopy(svg);
                   }}
                   className={classNames(
-                    "btn rounded-full border-2 border-[#25314C] hover:border-2 hover:border-[#25314C]",
-                    {
-                      "btn-circle": !isSm,
-                      "btn-block": isSm,
-                    }
+                    "btn rounded-full border-2 border-[#25314C] hover:border-2 hover:border-[#25314C] btn-block"
                   )}
                 >
                   <svg
@@ -144,18 +141,13 @@ export default function IconPopup() {
                       fill="#25314C"
                     />
                   </svg>
-
-                  {isSm && "Copy SVG"}
+                  Copy SVG
                 </button>
                 <Link
                   href="/"
-                  className={classNames(
-                    "btn bg-[#11BC7F] text-primary-content hover:bg-[#61cea8] rounded-full",
-                    {
-                      "btn-circle": !isSm,
-                      "btn-block": isSm,
-                    }
-                  )}
+                  className={
+                    "btn bg-[#11BC7F] text-primary-content hover:bg-[#61cea8] rounded-full btn-block text-sm"
+                  }
                 >
                   <svg
                     width="24"
@@ -169,7 +161,7 @@ export default function IconPopup() {
                       fill="white"
                     />
                   </svg>
-                  {isSm && "Upgrade to Pro"}
+                  Upgrade to Pro
                 </Link>
               </div>
             </div>
@@ -191,7 +183,7 @@ export default function IconPopup() {
                 </div>
               </div>
             </div>
-          </div>{" "}
+          </div>
         </motion.div>
       </div>
     </>
