@@ -1,10 +1,9 @@
 import cn from "classnames";
-import { FaAccessibleIcon } from "react-icons/fa";
 
 export type Category = {
   title: string;
   numIcons: number;
-  icon: string;
+  icon: JSX.Element;
   isNew?: boolean;
 };
 
@@ -29,10 +28,10 @@ export default function CategoryItem({
             "flex btn-circle items-center justify-center rounded-full bg-white"
           )}
         >
-          <FaAccessibleIcon size={24} />
+          {icon}
         </div>
 
-        <div className="flex flex-col justify-center md:ml-4">
+        <div className="flex flex-col justify-center items-start md:ml-4">
           <p className="font-bold text-sm">{title}</p>
           <p className="font-[12px] text-xs">{numIcons} icons</p>
         </div>
