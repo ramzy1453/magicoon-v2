@@ -19,12 +19,15 @@ export default function Footer() {
                   return (
                     <span
                       key={name}
-                      className="hover:text-black transition-all group flex items-center"
+                      className="hover:text-black transition-all group flex items-center relative w-fit"
                     >
-                      <FaChevronRight size={10} />
+                      <FaChevronRight
+                        size={10}
+                        className="absolute top-1/2 -translate-y-1/2 left-0 group-hover:left-2 transition-all"
+                      />
                       <Link
                         href={href}
-                        className="ml-4 hover:ml-2 hover:font-bold transition-all"
+                        className="ml-6 group-hover:font-bold transition-all"
                       >
                         {name}
                       </Link>
