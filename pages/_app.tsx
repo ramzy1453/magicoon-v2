@@ -63,10 +63,6 @@ export default function App({ Component, pageProps }: AppProps) {
           type="image/svg+xml"
           href="./img/favicon.svg"
         />
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-882VHK47YB"
-        ></script>
       </Head>
 
       <div className={cabinetGrotesk.className}>
