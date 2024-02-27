@@ -25,7 +25,7 @@ export default function Market() {
             The section below will tell you how.
           </p>
         </div>
-        <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-6 mx-auto">
           {[...market].map(({ price, src }) => (
             <MarketItem key={src} price={price} src={src} />
           ))}
@@ -44,8 +44,8 @@ export default function Market() {
 
       <div className="mt-40 flex flex-col lg:flex-row justify-around bg-[#EAEEF5] rounded-xl py-12 px-12 space-y-6 space-x-0 lg:space-x-6 lg:space-y-0 items-center lg:items-start">
         <div className="flex-[1] flex flex-col items-center space-y-8 justify-center lg:items-start">
-          <div className="">
-            <p className="text-5xl font-extrabold mb-4">magicoon</p>
+          <p className="text-5xl font-extrabold mb-4">
+            magicoon{" "}
             <LinearGradient
               gradient={[
                 "to right",
@@ -55,7 +55,7 @@ export default function Market() {
             >
               Freebies
             </LinearGradient>
-          </div>
+          </p>
           <p className="text-lg font-medium text-center lg:text-left">
             We'd like you to be able to use magicoon in the best way. The
             section below will tell you how.

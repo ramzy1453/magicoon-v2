@@ -24,7 +24,7 @@ export default function Footer() {
                       <FaChevronRight size={10} />
                       <Link
                         href={href}
-                        className="ml-4 group-hover:ml-2 group-hover:font-bold transition-all"
+                        className="ml-4 hover:ml-2 hover:font-bold transition-all"
                       >
                         {name}
                       </Link>

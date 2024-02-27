@@ -31,7 +31,7 @@ export default function CategoryItem({
           {icon}
         </div>
 
-        <div className="flex flex-col justify-center items-start md:ml-4">
+        <div className="flex flex-col justify-center items-center md:items-start md:ml-4">
           <p className="font-bold text-sm">{title}</p>
           <p className="font-[12px] text-xs">{numIcons} icons</p>
         </div>

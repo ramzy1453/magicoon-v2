@@ -11,7 +11,7 @@ export default function MarketItem(props: Props) {
   return (
     <Link
       href="/search"
-      className="card card-compact bg-white border border-[#DCE3ED] w-94 h-94 cursor-pointer hover:shadow transition"
+      className="card card-compact bg-white border border-[#DCE3ED] max-w-[370px] h-94 cursor-pointer hover:shadow transition"
     >
       <Image
         src={props.src}
