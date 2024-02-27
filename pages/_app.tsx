@@ -63,11 +63,12 @@ export default function App({ Component, pageProps }: AppProps) {
           type="image/svg+xml"
           href="./img/favicon.svg"
         />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-882VHK47YB"
+        ></script>
       </Head>
-      <Script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-882VHK47YB"
-      ></Script>
+
       <div className={cabinetGrotesk.className}>
         {isMd ? <Navbar /> : <NavbarMobile />}
         <main
