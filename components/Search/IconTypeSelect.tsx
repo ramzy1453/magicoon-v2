@@ -12,7 +12,7 @@ export default function IconTypeSelect() {
     useSearchStore();
   const [hasScrolled, setHasScrolled] = useState(false);
   const { isXXs } = useMediaQuery();
-
+  const heroRefCurrent = heroRef.current;
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -27,16 +27,16 @@ export default function IconTypeSelect() {
       { threshold: 0 }
     );
 
-    if (heroRef.current) {
-      observer.observe(heroRef.current);
+    if (heroRefCurrent) {
+      observer.observe(heroRefCurrent);
     }
 
     return () => {
-      if (heroRef.current) {
-        observer.unobserve(heroRef.current);
+      if (heroRefCurrent) {
+        observer.unobserve(heroRefCurrent);
       }
     };
-  }, []);
+  }, [heroRefCurrent]);
   return (
     <div className="max-w-[1224px] md:max-w-[1240px] md:px-8 pt-2 mx-auto space-y-4">
       {hasScrolled && <HeroSeach />}

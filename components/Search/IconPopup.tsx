@@ -61,7 +61,7 @@ export default function IconPopup() {
     return () => {
       window.removeEventListener("keydown", close);
     };
-  }, []);
+  }, [hideModal, selectedIcon]);
 
   return (
     <>
