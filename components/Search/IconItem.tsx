@@ -25,7 +25,7 @@ export default function IconItem(props: Props) {
           path,
         });
       }}
-      className="flex flex-col py-4 space-y-4 px-3 items-center justify-evenly rounded-2xl cursor-pointer bg-[rgb(248,249,251)] hover:bg-[#D2DCEA]"
+      className="w-full h-full flex flex-col py-4 space-y-4 px-3 items-center justify-evenly rounded-2xl cursor-pointer bg-[rgb(248,249,251)] hover:bg-[#D2DCEA]"
     >
       {cloneElement(props.path, {
         style: { fill: props.pathColor, width: "40", height: "40" },

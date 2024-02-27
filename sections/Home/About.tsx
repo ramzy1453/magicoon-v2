@@ -14,7 +14,7 @@ export default function About({}: Props) {
       </p>
       <div className="mb-[85px]">
         <iframe
-          src="https://www.youtube.com/embed/5A6SGzDfsko?controls=0"
+          src=""
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen

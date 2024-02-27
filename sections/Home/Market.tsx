@@ -44,7 +44,7 @@ export default function Market() {
 
       <div className="mt-40 flex flex-col lg:flex-row justify-around bg-[#EAEEF5] rounded-xl py-12 px-12 space-y-6 space-x-0 lg:space-x-6 lg:space-y-0 items-center lg:items-start">
         <div className="flex-[1] flex flex-col items-center space-y-8 justify-center lg:items-start">
-          <p className="text-5xl font-extrabold mb-4">
+          <p className="text-5xl font-extrabold text-center mb-4">
             magicoon{" "}
             <LinearGradient
               gradient={[

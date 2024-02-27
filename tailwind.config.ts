@@ -11,6 +11,7 @@ const config: Config = {
   ],
   theme: {
     screens: {
+      xs: "420px",
       tablet: "750px",
       laptop: "900px",
       ...defaultTheme.screens,

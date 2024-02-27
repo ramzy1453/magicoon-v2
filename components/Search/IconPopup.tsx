@@ -95,7 +95,7 @@ export default function IconPopup() {
                   </span>
                 </div>
               </div>
-              <div className="flex-1 flex flex-col justify-between items-center sm:items-start">
+              <div className="flex-1 flex flex-col justify-center space-y-3 items-center sm:items-start">
                 <button
                   className={classNames(
                     "btn btn-primary rounded-full btn-block"
@@ -165,23 +165,26 @@ export default function IconPopup() {
                 </Link>
               </div>
             </div>
-            <div className="flex justify-center items-center px-8 py-6">
-              <div className="flex justify-center bg-white text-primary rounded-lg border border-[#E0E8F3]">
+            <div className="flex justify-center items-center px-6 py-6">
+              <Link
+                href="5"
+                className="p-4 border space-x-4 flex bg-white text-primary rounded-lg min-h-[132px] max-w-[376px] min-w-[2 70x]"
+              >
                 <Image
-                  className="rounded-tl-lg rounded-bl-lg border-l border-[#E0E8F3]"
+                  className="max-w-[130px] max-h-[100px]"
                   alt="hero-search"
                   src="/hero-search.jpeg"
-                  width={172}
-                  height={132}
+                  width={130}
+                  height={100}
                 />
-                <div className="flex flex-col justify-center items-center p-4 space-y-[10px] font-medium text-sm">
-                  <p className="max-w-[188px]">
+                <div className="flex flex-col max-w-[204px] justify-center items-center space-y-[10px] font-medium text-sm">
+                  <p className="">
                     high-quality essential UI icons, modernly designed,
                     featuring multiple styles, and categories.
                   </p>
                   <p className="self-end">Read more</p>
                 </div>
-              </div>
+              </Link>{" "}
             </div>
           </div>
         </motion.div>

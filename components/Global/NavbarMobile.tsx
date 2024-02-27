@@ -4,15 +4,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { PiCaretDownFill } from "react-icons/pi";
 import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
-
 import classes from "../../styles/navbar.module.css";
 import { useOnClickOutside } from "usehooks-ts";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useScroll } from "framer-motion";
 
 export default function NavbarMobile() {
   const [openLinks, setOpenLinks] = useState<boolean>(false);
   const [openGradient, setOpenGradient] = useState<boolean>(false);
   const ref = useRef() as RefObject<HTMLElement>;
+  const { scrollY } = useScroll();
+  scrollY.on("change", (latestValue) => {
+    if ((openLinks || openGradient) && latestValue > 0) {
+      setOpenLinks(false);
+      setOpenGradient(false);
+    }
+  });
 
   const toggleLinks = () => {
     setOpenLinks((prev) => !prev);

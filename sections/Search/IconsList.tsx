@@ -39,6 +39,7 @@ export default function IconsList() {
               className="grid gap-3"
               style={{
                 gridTemplateColumns: "repeat(auto-fill, minmax(120px, 1fr))",
+                gridTemplateRows: "repeat(auto-fill, minmax(120px, 1fr))",
                 gridAutoRows: "calc(120px)",
               }}
             >
