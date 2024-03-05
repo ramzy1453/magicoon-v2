@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -11,7 +12,7 @@ export default function MarketItem(props: Props) {
   return (
     <Link
       href="/search"
-      className="card card-compact bg-white border border-[#DCE3ED] max-w-[370px] h-94 cursor-pointer hover:shadow transition"
+      className="card card-compact bg-white border border-[#DCE3ED] h-94 cursor-pointer hover:shadow transition"
     >
       <Image
         src={props.src}

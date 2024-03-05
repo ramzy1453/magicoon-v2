@@ -5,7 +5,7 @@ import useMediaQuery from "@/hooks/useMediaQuery";
 import NavbarMobile from "@/components/Global/NavbarMobile";
 import { usePathname } from "next/navigation";
 import classNames from "classnames";
-import Script from "next/script";
+
 import Head from "next/head";
 import type { AppProps } from "next/app";
 import "@/styles/globals.css";

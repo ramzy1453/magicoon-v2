@@ -12,7 +12,7 @@ import Usability from "@/sections/Home/Usability";
 
 export default function HomePage() {
   return (
-    <div className="">
+    <div className="mb-40">
       <div
         id="start"
         className="mt-28 flex flex-col justify-center items-center"

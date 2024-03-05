@@ -6,12 +6,19 @@ import { useSearchStore } from "@/store/zustand";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import HeroSeach from "./HeroSearch";
 import { useEffect, useState } from "react";
+import { responsive } from "../../lib/tw";
 
 export default function IconTypeSelect() {
   const { color, resetColor, setColor, iconType, setIconType, heroRef } =
     useSearchStore();
   const [hasScrolled, setHasScrolled] = useState(false);
   const { isXXs } = useMediaQuery();
+  console.log(
+    responsive(
+      "md",
+      "flex-row items-center justify-center w-fit h-fit text-xs px-3 py-1 rounded-full space-x-2 bg-red-500"
+    )
+  );
   const heroRefCurrent = heroRef.current;
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -49,7 +56,8 @@ export default function IconTypeSelect() {
             className={classNames("btn btn-sm btn-circle text-xs", {
               "bg-success hover:bg-success text-primary-content":
                 iconType === 0,
-              "text-primary hover:bg-[#E0E8F3]": iconType !== 0,
+              "text-primary hover:bg-[#E0E8F3] bg-transparent border-none":
+                iconType !== 0,
             })}
           >
             ALL
@@ -61,11 +69,13 @@ export default function IconTypeSelect() {
                 setIconType(i + 1);
               }}
               className={classNames(
-                "btn btn-sm rounded-full font-bold text-xs lg:space-x-1 lg:px-6 h-12 w-12 lg:w-fit lg:h-fit",
+                "rounded-2xl btn-sm font-bold text-[10px] flex flex-col items-center justify-center w-14 h-14",
+                "md:flex-row md:items-center md:justify-center md:w-fit md:h-fit md:text-xs md:px-3 md:py-1 md:rounded-full md:space-x-2",
                 {
                   "bg-success hover:bg-success text-primary-content":
                     iconType === i + 1,
-                  "text-primary hover:bg-[#E0E8F3]": iconType !== i + 1,
+                  "text-primary hover:bg-[#E0E8F3] bg-transparent border-none":
+                    iconType !== i + 1,
                 }
               )}
             >
