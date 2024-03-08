@@ -19,13 +19,13 @@ export default function Market() {
         </p>
         <div>
           <p className="text-lg text-center font-medium">
-            We'd like you to be able to use magicoon in the best way.
+            We would like you to be able to use magicoon in the best way.
           </p>
           <p className="text-lg text-center">
             The section below will tell you how.
           </p>
         </div>
-        <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-6 mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mx-auto">
           {[...market].map(({ price, src }) => (
             <MarketItem key={src} price={price} src={src} />
           ))}
@@ -42,8 +42,8 @@ export default function Market() {
         </div>
       </div>
 
-      <div className="mt-40 flex flex-col lg:flex-row justify-around bg-[#EAEEF5] rounded-xl py-12 px-12 space-y-6 space-x-0 lg:space-x-6 lg:space-y-0 items-center lg:items-start">
-        <div className="flex-[1] flex flex-col items-center space-y-8 justify-center lg:items-start">
+      <div className="mt-40 flex flex-col xl:flex-row justify-around bg-[#EAEEF5] rounded-xl py-12 px-12 space-y-6 space-x-0 xl:space-x-6 xl:space-y-0 items-center xl:items-start">
+        <div className="flex-[1] flex flex-col items-center space-y-8 justify-center xl:items-start">
           <p className="text-5xl font-extrabol mb-4">
             magicoon{" "}
             <LinearGradient
@@ -57,14 +57,14 @@ export default function Market() {
             </LinearGradient>
           </p>
           <p className="text-lg font-medium text-center lg:text-left">
-            We'd like you to be able to use magicoon in the best way. The
+            We would like you to be able to use magicoon in the best way. The
             section below will tell you how.
           </p>
           <button className="btn btn-primary text-primary-content px-6 text-lg rounded-full">
             START NOW!
           </button>
         </div>
-        <div className="flex flex-col sm:flex-row space-x-0 space-y-6 sm:space-y-0 sm:space-x-6">
+        <div className="flex flex-col lg:flex-row space-x-0 space-y-6 lg:space-y-0 lg:space-x-6">
           <MarketItem src="/1-Detail Images-288 UI icons library-Seyfeddine Beroual.png" />
           <MarketItem src="/1 - Detail Images - magicoon - Modern icons library 1800-1360.png" />
         </div>
