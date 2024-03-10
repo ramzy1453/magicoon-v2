@@ -7,10 +7,11 @@ import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 import classes from "../../styles/navbar.module.css";
 import { useOnClickOutside } from "usehooks-ts";
 import { AnimatePresence, motion, useScroll } from "framer-motion";
-
+import { usePathname } from "next/navigation";
 export default function NavbarMobile() {
   const [openLinks, setOpenLinks] = useState<boolean>(false);
   const [openGradient, setOpenGradient] = useState<boolean>(false);
+
   const ref = useRef() as RefObject<HTMLElement>;
   const { scrollY } = useScroll();
   scrollY.on("change", (latestValue) => {
@@ -39,10 +40,19 @@ export default function NavbarMobile() {
     setOpenLinks(false);
   });
 
+  const pathname = usePathname();
+
   const HamburgerIcon = openLinks ? RxCross1 : RxHamburgerMenu;
   return (
     <>
-      <div className="px-6 flex items-center justify-between border-b border-[#DDE2EB] bg-[#F8F9FB] top-0 z-10 h-24">
+      <div
+        className={classNames(
+          "px-6 flex items-center justify-between border-b border-[#DDE2EB] bg-[#F8F9FB] top-0 z-10 h-24",
+          {
+            sticky: pathname !== "/search",
+          }
+        )}
+      >
         <div className="space-x-6 flex items-center justify-center">
           <HamburgerIcon
             size={24}

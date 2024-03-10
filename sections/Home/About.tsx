@@ -1,9 +1,7 @@
 import React from "react";
 import styles from "../../styles/iframe-video.module.css";
 
-type Props = {};
-
-export default function About({}: Props) {
+export default function About() {
   return (
     <>
       <p className="text-3xl text-primary font-black mb-8">ABOUT</p>
@@ -14,7 +12,7 @@ export default function About({}: Props) {
       </p>
       <div className="mb-[85px]">
         <iframe
-          src=""
+          src="https://www.youtube.com/watch?v=mlTEaDewo8g"
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
