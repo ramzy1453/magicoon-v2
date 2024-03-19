@@ -7,7 +7,7 @@ type Props = {};
 
 export default function MessageSent({}: Props) {
   return (
-    <div className="flex flex-col items-center justify-center space-y-[14px]">
+    <div className="flex flex-col items-center justify-center space-y-[14px] mb-16">
       <Image alt="message sent" src="check_circle.svg" width={56} height={56} />
       <p className="text-primat font-black text-[38px]">Great!</p>
       <p className="font-medium text-[15px]">
